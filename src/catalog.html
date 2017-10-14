@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <title>MANDRAGORE</title>
+	<link href="styles.css" rel="stylesheet">
+	<link href="stylescat.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!--<link href="dopstyle.css" rel="stylesheet" media="screen">-->
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Play:400,700&subset=cyrillic');
+	</style>
+	
+	
+  </head>
+
+  <body>
+		
+		
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div id="navstrip" class="container-fluid"> 
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="#">MANDRAGORE</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+			<li class="active"><a id="paragraph" href="index.html">Главная<span class="sr-only">(current)</span></a></li>
+			<li><a id="paragraph" href="#">Каталог товаров<span class="sr-only">(current)</span></a></li>
+			<li><a id="paragraph" href="#">Оплата<span class="sr-only">(current)</span></a></li>
+			<li><a id="paragraph" href="#">Доставка<span class="sr-only">(current)</span></a></li>
+			<li><a id="paragraph" href="#">О нас<span class="sr-only">(current)</span></a></li>
+			<li><a id="paragraph" href="#">Личный кабинет<span class="sr-only">(current)</span></a></li>   
+		  </ul>
+		<form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Поиск">
+        </div>
+        <button type="submit" class="btn btn-default">Искать</button>
+      </form>
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a id="paragraph" href="#"><img id="account-image"src="media/delldo.jpg" width=20px alt="..."> Имя пользователя<span class="sr-only">(current)</span></a></li>
+			<li><a id="paragraph" href="#">Корзина<span id="azaza" class="badge">0</span> <span class="sr-only">(current)</span></a></li>
+			  
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	
+<!-- 	<div id="serp" class="row">
+
+  <div class="col-md-12">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Поиск:">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Искать!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div> -->
+			<!--Sidebar-->
+<div class="col-md-12" class="col-xs-12" class="col-sm-12"> 
+<div class="catcont" class="container-fluid">
+	<div class="col-md-2" class="col-sm-2"> 
+	<!-- <div class="panel panel-default"> -->
+		<div class="sidebar" class="panel-body">
+			<ul class="list-group">	
+				<li class="list-group-item"><span id="azaza" class="badge">0</span><a id="red-text" href="#" >Акции</a></li>
+				<li class="list-group-item"><span id="azaza" class="badge">0</span><a id="red-text" href="#">Новинки</a></li>
+				<li class="list-group-item"><a href="#">Компьютеры</a></li>
+				<li class="list-group-item"><a href="#">Ноутбуки</a></li>
+				<li class="list-group-item"><a href="#">Процессоры</a></li>
+				<li class="list-group-item"><a href="#">Материнские платы</a></li>
+				<li class="list-group-item"><a href="#">Видеокарты</a></li>
+				<!-- <li class="list-group-item"><div class="dropdown">
+				  <a  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					Комплектующие
+					<span class="caret"></span>
+				  </a>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<li><a href="#">Процессоры</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#">Видеокарты</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#">Материнские платы</a></li>
+					
+					
+				  </ul>
+				</div></li>
+<!-- 				<li class="list-group-item"><a href="#">Процессоры</a></li>
+				<li class="list-group-item"><a href="#">Видеокарты</a></li>
+				<li class="list-group-item"><a href="#">Материнские платы</a></li> -->
+				<!--<li class="list-group-item"><div class="dropdown">
+				  <a  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					   Доп. оборудование  
+					<span class="caret"></span>
+				  </a>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<li><a href="#">Мониторы</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#">Клавиатуры</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#">Мыши</a></li>
+					
+					
+				  </ul>
+				</div></li> -->
+				
+				<li class="list-group-item"><a href="#">Мониторы</a></li>
+				<li class="list-group-item"><a href="#">Клавиатуры</a></li>
+				<li class="list-group-item"><a href="#">Мыши</a></li>									
+			</ul>
+			
+		</div>
+		
+
+	</div>
+	
+	<!-- </div> -->
+		
+			<!--Main-->
+	
+	<div class="col-md-10" class="col-sm-10"> 
+	<div class="main-block" class="panel panel-default">
+	<div>
+	<div class="col-md-10"></div>
+	<ul class="nav nav-pills">
+	  <li id="li-sorter"><div class="dropdown">
+				  <a id="sorter" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					   Сортировка  
+					<span class="caret"></span>
+				  </a>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<li><a href="#">Цена по наростанию</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#">Цена по убыванию</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#">Новинки</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#">По популярности</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#">Скидки</a></li>
+					 </ul>
+				</div></li>
+	</ul>
+	</div>
+		<div class="panel-body">
+			<div  class="row">
+			  <div class="col-sm-2 col-md-3">
+				<div id="tovar" class="thumbnail">
+				  <img src="media/macbooks.jpg" alt="...">
+				  <div class="caption">
+					<a id="nameoftovar" href="fuck-you"><h3>Apple A1466 MacBook Air 13" (MQD32UA/A)<span id="red-background" class="badge">SALE!</span></h3></a>
+					<h4>Цена: <strike>27 899</strike> 25 999 грн</h4>
+				<p>Экран 13.3" (1440x900) WXGA+ LED, глянцевый / Intel Core i5 (1.8 - 2.9 ГГц) / RAM 8 ГБ / SSD 128 ГБ / Intel HD Graphics 6000 / без ОД / Wi-Fi / Bluetooth / веб-камера / macOS Sierra / 1.35 кг</p><br/>
+					<p><a href="#" class="btn btn-primary" role="button">Подробнее</a> <a href="#" class="btn btn-default" role="button">В корзину</a></p>
+				  </div>
+				</div>
+				</div>
+				<div class="col-sm-2 col-md-3">
+				<div id="tovar" class="thumbnail">
+				  <img src="media/macbooks.jpg" alt="...">
+				  <div class="caption">
+					<a id="nameoftovar" href="fuck-you"><h3>Apple A1466 MacBook Air 13" (MQD32UA/A)<span id="red-background" class="badge">SALE!</span></h3></a>
+					<h4>Цена: <strike>27 899</strike> 25 999 грн</h4>
+					<p>Экран 13.3" (1440x900) WXGA+ LED, глянцевый / Intel Core i5 (1.8 - 2.9 ГГц) / RAM 8 ГБ / SSD 128 ГБ / Intel HD Graphics 6000 / без ОД / Wi-Fi / Bluetooth / веб-камера / macOS Sierra / 1.35 кг</p><br/>
+					<p><a href="#" class="btn btn-primary" role="button">Подробнее</a> <a href="#" class="btn btn-default" role="button">В корзину</a></p>
+				  </div>
+				</div>
+				</div>
+				<div class="col-sm-2 col-md-3">
+				<div id="tovar" class="thumbnail">
+				  <img src="media/macbooks.jpg" alt="...">
+				  <div class="caption">
+					<a id="nameoftovar" href="fuck-you"><h3>Apple A1466 MacBook Air 13" (MQD32UA/A)<span id="red-background" class="badge">SALE!</span></h3></a>
+					<h4>Цена: <strike>27 899</strike> 25 999 грн</h4>
+					<p>Экран 13.3" (1440x900) WXGA+ LED, глянцевый / Intel Core i5 (1.8 - 2.9 ГГц) / RAM 8 ГБ / SSD 128 ГБ / Intel HD Graphics 6000 / без ОД / Wi-Fi / Bluetooth / веб-камера / macOS Sierra / 1.35 кг</p><br/>
+					<p><a href="#" class="btn btn-primary" role="button">Подробнее</a> <a href="#" class="btn btn-default" role="button">В корзину</a></p>
+				  </div>
+				</div>
+				</div>
+				<div class="col-sm-2 col-md-3">
+				<div id="tovar" class="thumbnail">
+				  <img src="media/macbooks.jpg" alt="...">
+				  <div class="caption">
+					<a id="nameoftovar" href="fuck-you"><h3>Apple A1466 MacBook Air 13" (MQD32UA/A)<span id="red-background" class="badge">SALE!</span></h3></a>
+					<h4>Цена: <strike>27 899</strike> 25 999 грн</h4>
+					<p>Экран 13.3" (1440x900) WXGA+ LED, глянцевый / Intel Core i5 (1.8 - 2.9 ГГц) / RAM 8 ГБ / SSD 128 ГБ / Intel HD Graphics 6000 / без ОД / Wi-Fi / Bluetooth / веб-камера / macOS Sierra / 1.35 кг</p><br/>
+					<p><a href="#" class="btn btn-primary" role="button">Подробнее</a> <a href="#" class="btn btn-default" role="button">В корзину</a></p>
+				  </div>
+				</div>
+				</div>
+				<div class="col-sm-2 col-md-3">
+				<div id="tovar" class="thumbnail">
+				  <img src="media/dell.jpg" alt="...">
+				  <div class="caption">
+					<h3>Dell XPS 15 9550 (X5581S0NDW-46S)<span id="red-background" class="badge">SALE!</span></h3>
+					<h4>Цена: <strike>44 899</strike> 39 999 грн</h4>
+					<p>Экран 15.6" IGZO (1920x1080) Full HD, глянцевый / Intel Core i5-6300HQ (2.3 - 3.2 ГГц) / RAM 8 ГБ / SSHD 1 ТБ + 32 ГБ / nVidia GeForce GTX 960M, 2 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / Windows 10 Home / 1.78 кг</p>
+					<p><a href="#" class="btn btn-primary" role="button">Подробнее</a> <a href="#" class="btn btn-default" role="button">В корзину</a></p>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-sm-2 col-md-3">
+				<div id="tovar" class="thumbnail">
+				  <img src="media/dell.jpg" alt="...">
+				  <div class="caption">
+					<h3>Dell XPS 15 9550 (X5581S0NDW-46S)<span id="red-background" class="badge">SALE!</span></h3>
+					<h4>Цена: <strike>44 899</strike> 39 999 грн</h4>
+					<p>Экран 15.6" IGZO (1920x1080) Full HD, глянцевый / Intel Core i5-6300HQ (2.3 - 3.2 ГГц) / RAM 8 ГБ / SSHD 1 ТБ + 32 ГБ / nVidia GeForce GTX 960M, 2 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / Windows 10 Home / 1.78 кг</p>
+					<p><a href="#" class="btn btn-primary" role="button">Подробнее</a> <a href="#" class="btn btn-default" role="button">В корзину</a></p>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-sm-2 col-md-3">
+				<div id="tovar" class="thumbnail">
+				  <img src="media/dell.jpg" alt="...">
+				  <div class="caption">
+					<h3>Dell XPS 15 9550 (X5581S0NDW-46S)<span id="red-background" class="badge">SALE!</span></h3>
+					<h4>Цена: <strike>44 899</strike> 39 999 грн</h4>
+					<p>Экран 15.6" IGZO (1920x1080) Full HD, глянцевый / Intel Core i5-6300HQ (2.3 - 3.2 ГГц) / RAM 8 ГБ / SSHD 1 ТБ + 32 ГБ / nVidia GeForce GTX 960M, 2 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / Windows 10 Home / 1.78 кг</p>
+					<p><a href="#" class="btn btn-primary" role="button">Подробнее</a> <a href="#" class="btn btn-default" role="button">В корзину</a></p>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-sm-2 col-md-3">
+				<div id="tovar" class="thumbnail">
+				  <img src="media/dell.jpg" alt="...">
+				  <div class="caption">
+					<h3>Dell XPS 15 9550 (X5581S0NDW-46S)<span id="red-background" class="badge">SALE!</span></h3>
+					<h4>Цена: <strike>44 899</strike> 39 999 грн</h4>
+					<p>Экран 15.6" IGZO (1920x1080) Full HD, глянцевый / Intel Core i5-6300HQ (2.3 - 3.2 ГГц) / RAM 8 ГБ / SSHD 1 ТБ + 32 ГБ / nVidia GeForce GTX 960M, 2 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / Windows 10 Home / 1.78 кг</p>
+					<p><a href="#" class="btn btn-primary" role="button">Подробнее</a> <a href="#" class="btn btn-default" role="button">В корзину</a></p>
+				  </div>
+				</div>
+			  </div>
+									  
+			</div>
+		</div>
+	</div>
+	</div>
+	
+	
+</div>	
+</div>
+
+<script type="text/javascript" src="assets/bootstrap/js/jquery-3.2.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
