@@ -1,2 +1,209 @@
-/* You can add global styles to this file, and also import other style files */
-@import './assets/bootstrap/css/bootstrap.min.css';
+
+@import url('https://fonts.googleapis.com/css?family=Play:400,700&subset=cyrillic');
+
+* {
+	font-family: 'Play', Arial, sans-serif;
+}
+
+
+html, body {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+}
+
+body {
+    margin: 0;
+    height: 2000px;
+    background: linear-gradient(180deg,white, white);
+
+}
+.navbar-header {
+	background: #337AB7;
+	padding-left: 1%;
+	border-radius: 5px;
+
+	
+	
+}
+.navbar-brand {
+	color: white !important;
+}
+
+#paragraph {
+	color: #337AB7 !important;
+}
+
+.form-control {
+	border-color: #337AB7 !important;
+}
+
+#nop {
+	color: black !important;
+}
+
+.active {
+	background: black;
+}
+.navbar-default {
+	color: #337AB7 !important;
+	border-bottom: 1px solid !important;
+	border-color: #337AB7 !important;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+
+#azaza {
+	background: #337AB7 !important;
+}
+
+
+
+#mpcz {
+	margin-top: 65px;
+	
+	
+}
+
+#description {
+	height: 393px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	border-radius: 0 !important;
+}
+
+#rob {
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#serp {
+	margin-top: 68px;
+	border-radius: 0 !important;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+
+.btn-default {
+	border-color: #337AB7 !important;
+	color: #337AB7 !important;
+}
+
+#kartinki { 
+	padding-top: 28px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/*-----------Главный участок*/
+.panel-default1 {
+	height: 80%;
+	margin-top: 10px;
+	border: solid 1px !important;
+	border-color: #337AB7 !important;
+	background: rgba(231,231,231,0.8) !important;
+	
+}
+
+.media {
+	border: solid 1px !important;
+	border-color: #337AB7 !important;
+	border-radius: 10px !important;
+	background: white;
+	
+}
+
+#tovar {
+	border: solid 1px !important;
+	border-color: #337AB7 !important;
+
+}
+
+#nameoftovar {
+	color: black !important;
+}
+
+
+.panel-heading {
+	background: #337AB7;
+	color: white;
+	height: 0 !important;
+	border-radius: 10px !important;
+}
+
+#panel-title{
+	
+	height: 2px !important;
+	border-radius: 10px !important;
+	
+}
+
+#footer {
+/*    position:;
+   left:0px;
+   bottom:0px; */
+   
+   
+   
+  
+   
+}
+
+
+
+#fm {
+	
+	
+	 display: inline;
+	font-size: 12px;
+	margin-bottom: 15px;
+}
+
+.catcont {
+	margin-top: 60px;
+	background: white !important;
+	
+}
+
+.sidebar {
+	color: #337AB7 !important;
+	font-size: 16px;
+	box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+	
+	
+}
+
+.main-block {
+	box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+	border-top: solid 2px;
+	border-color: #337AB7;
+	background: white;
+	
+}
+
+#red-background {
+	background:red;
+}
+
+#infpan {
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#sorter {
+	color: white;
+}
+
+#li-sorter {
+	height: 40px;
+	width: 100px;
+	padding-left: 5px;
+	padding-top: 9px;
+	background: #337AB7;
+	border-radius: 0 0 10px 10px;
+	
+}
+#account-image {
+	border-radius: 15px;
+}
+/* #red-text {
+	color: red;	
+} */
+
+
+
