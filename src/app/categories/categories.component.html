@@ -1,0 +1,9 @@
+<div class="content container-fluid">
+  <div class="row">
+    <div class="col-lg-2 col-md-3 col-xs-4">
+      <categories-list [categories]="categories" (idChanged)="onIdChange($event)"></categories-list>
+    </div>
+    <category-elements [id]="id"></category-elements>
+  </div>
+</div>
+<footer></footer>

@@ -85,6 +85,10 @@ body {
 	}
 }
 
+.content {
+  margin-top: 50px !important;
+}
+
 /* LOADING ANIMATION */
 
 /* Frame Upload */

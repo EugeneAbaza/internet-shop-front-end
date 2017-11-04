@@ -14,19 +14,19 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active"><a id="paragraph" href="index.html">Главная<span class="sr-only">(current)</span></a></li>
-      <li><a id="paragraph" href="catalog.html">Каталог товаров<span class="sr-only">(current)</span></a></li>
-      <li><a id="paragraph" href="#">Оплата и доставка<span class="sr-only">(current)</span></a></li>
-      <li><a id="paragraph" href="#">О нас<span class="sr-only">(current)</span></a></li>
+      <li><a id="paragraph" routerLink="/main" routerLinkActive="active-my">Главная<span class="sr-only">(current)</span></a></li>
+      <li><a id="paragraph" routerLink="/categories" routerLinkActive="active-my">Каталог товаров<span class="sr-only">(current)</span></a></li>
+      <li><a id="paragraph" routerLink="/">Оплата и доставка<span class="sr-only">(current)</span></a></li>
+      <li><a id="paragraph" routerLink="/">О нас<span class="sr-only">(current)</span></a></li>
        
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    <li><a id="paragraph" href="#">
+    <li><a id="paragraph" routerLink="/">
       <img id="account-image" src="assets/images/delldo.jpg" width=20px alt="..."> Личный кабинет
         <span class="sr-only">(current)</span>
       </a>
     </li>
-    <li><a id="paragraph" href="#">Корзина
+    <li><a id="paragraph" routerLink="/">Корзина
       <span id="indicator" class="badge">0</span> <span class="sr-only">(current)</span></a></li>
     
     </ul>
