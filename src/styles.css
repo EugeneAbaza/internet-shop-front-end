@@ -16,8 +16,11 @@ html, body {
 body {
     margin: 0;
     height: auto;
-    /*background: linear-gradient(180deg,#252629, #252629, #252629, #252629, #EE6F12);
-*/
+    /* background: linear-gradient(180deg,#252629, white, white, white, white, white, white, white, white, white, white, white, white); */
+	background: white; 
+}
+.page-header {
+	background: #252629;
 }
 /*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*/
 .navbar-header {
@@ -32,6 +35,13 @@ body {
 .navbar-brand {
 	color: white !important;
 }
+#paragraph:hover {
+	background-color: #FF8023;
+	color: white;
+}
+#paragraph {
+	color: #FF8023;
+}
 .navbar-default {
 	color: #FF8023 !important;
 	border: 0 !important;
@@ -39,10 +49,70 @@ body {
 	background: #252629 !important;
 	margin-bottom: 1px !important;
 }
-#indicator {
+#c-i {
+	background: transparent !important;
+	border-color: #FF8023 !important;
+}
+#c-i:hover{
 	background: #FF8023 !important;
 }
+.btn-primary {
+	border-color: #FF8023!important;
+	background-color: #FF8023!important;
+	color: white!important;
+	
+	
+}
+.btn-primary:hover {
+	color: #FF8023!important;
+	background-color: transparent!important;
+}
+.btn-default:hover {
+	border-color: #FF8023!important;
+	background-color: #FF8023!important;
+	color: white!important;
+	
+	
+}
+.btn-default {
+	color: #FF8023!important;
+	background-color: transparent!important;
+	border-color: #FF8023!important;
+}
 /*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*/
+
+#page-header {
+	margin-top: 50px;
+	margin-bottom: 0px;
+	color: #FF8023;
+	border-color: transparent;
+}
+#description {
+	color: white;
+}
+.thumbnail {
+	 background: transparent!important;
+	border-color: transparent !important;
+}
+.nav-tabs {
+	border-color: #FF8023 !important;
+	background: #252629 !important;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #ddd !important;
+    cursor: default;
+    background: #fff !important;
+    border: 1px solid #FF8023 !important;
+    border-bottom-color: transparent !important;
+}
+#tabs-notactive {
+	color: #FF8023 !important;
+}
+#tabs-notactive:hover {
+	background: #252629;
+	color: white;
+	border-color: #FF8023;
+}
 /* Fade Slider CSS *//* Fade Slider CSS *//* Fade Slider CSS */
 .otstup{
 	margin-top:52px;
@@ -68,6 +138,9 @@ body {
   z-index: 1000;
   outline:none;
 }
+#goods-cz {
+	margin-top: 10px !important;
+}
 /* Fade Slider CSS *//* Fade Slider CSS *//* Fade Slider CSS */
 .search-pannel {
 	margin-top: 10px;
@@ -84,4 +157,10 @@ body {
 	padding: 15px 10px!important;	
 	}
 }
+#registration-form {
+	margin-top: 70px !important;
+}
 
+.input-group {
+	margin-top: 20px;
+}
