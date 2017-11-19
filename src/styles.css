@@ -32,6 +32,10 @@ body {
 	text-decoration: line-through;
 }
 
+.one-line-price{
+  display: inline-block;
+}
+
 .navbar-brand {
 	color: white !important;
 }
@@ -212,4 +216,17 @@ body {
   @keyframes upload {
     from { transform: translateY(35px); }
     to { transform: translateY(-35px); }
+  }
+
+  /*переместить в компонент*/
+  .panel{
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    padding: 0px 5px;
+  }
+
+  .panel-color{
+    color: white;
+    background: #252629 !important;
+    margin-bottom: 0px !important;
   }

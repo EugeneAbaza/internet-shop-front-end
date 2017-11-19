@@ -1,13 +1,13 @@
 import { ActivatedRoute } from '@angular/router';
 import { CategoryElementsService } from './../../servises/category-elements.service';
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'category-elements',
   templateUrl: './category-elements.component.html',
   styleUrls: ['./category-elements.component.css']
 })
-export class CategoryElementsComponent implements OnInit, OnDestroy {
+export class CategoryElementsComponent implements OnInit {
   @Input()
   private id: number;
   private page = 0;
@@ -18,8 +18,6 @@ export class CategoryElementsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.content = [];
   }
-
-  ngOnDestroy() { console.log(`onDestroy`); }
 
   ngOnChanges(){
     this.content = [];

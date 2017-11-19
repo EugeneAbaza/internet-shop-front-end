@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CategoryElementsService {
 
-  private url = 'http://localhost:8080/goods';
+  private url = 'http://localhost:8080/goods/category';
   constructor(private http: Http) { }
 
   getElements(id: number, page: number){

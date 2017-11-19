@@ -1,0 +1,88 @@
+
+<div id="goods-cz" >
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default"> <!-- Характеристики -->
+        <div class="panel-body">
+           <table class="table">
+             <thead>
+               <tr>
+                 <th>{{laptop.goods.name}}</th>
+                 <th></th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>Процессор</td>
+                 <td>{{laptop.cpuName + ' ' + laptop.cpuModel}}</td>
+                 <td></td>
+               </tr>
+               <tr>
+                  <td>Количество ядер</td>
+                  <td>{{laptop.cpuCountOfCores}}</td>
+                  <td></td>
+                </tr>
+                <tr>
+                    <td>Частота ядер</td>
+                    <td>{{laptop.cpuFrequencyMin + ' - ' + laptop.cpuFrequencyMax + ' ГГрц'}}</td>
+                    <td></td>
+                </tr>
+               <tr>
+                 <td>Диагональ экрана</td>
+                 <td>{{laptop.screen + "' (" + laptop.resolution + ') ' + laptop.screenType}}</td>
+               </tr>
+              <tr>
+                <td>Оперативная память</td>
+                <td>{{laptop.ram}} ГБ</td>
+              </tr>
+              <tr>
+                <td>HDD</td>
+                <td>{{laptop.hdd}} ГБ</td>
+              </tr>
+              <tr>
+                <td>SSD</td>
+                <td>{{laptop.ssd > 0 ? laptop.ssd + ' ГБ' : '-'}}</td>
+              </tr>
+              <tr>
+                <td>Цвет</td>
+                <td>{{laptop.color}}</td>
+              </tr>
+              <tr>
+                <td>Операционная система</td>
+                <td>{{laptop.os}}</td>
+              </tr>
+              <tr>
+                <td>Графика</td>
+                <td>{{(laptop.discreteGraphics ? 'Дискретная ' : 'Встроенная ') + laptop.gpuName + ' ' + laptop.gpuModel + ' (' + laptop.gpuRam + ' ГБ)'}}</td>
+              </tr>
+              <tr>
+                <td>Мультитач</td>
+                <td>{{laptop.multiTouch ? '+' : '-'}}</td>
+              </tr>
+              <tr>
+                <td>WI-Fi</td>
+                <td>{{laptop.wifi ? '+' : '-'}}</td>
+              </tr>
+              <tr>
+                <td>Bluetooth</td>
+                <td>{{laptop.bluetooth}}</td>
+              </tr>
+              <tr>
+                <td>Веб камера</td>
+                <td>{{laptop.webCam ? '+' : '-'}}</td>
+              </tr>
+              <tr>
+                <td>LAN</td>
+                <td>{{laptop.lan ? '+' : '-'}}</td>
+              </tr>
+              <tr>
+                <td>Вес</td>
+                <td>{{laptop.weight + ' кг'}}</td>
+              </tr>
+             </tbody>
+           </table>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>

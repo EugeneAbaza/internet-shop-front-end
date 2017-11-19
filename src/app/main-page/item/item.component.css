@@ -1,6 +1,3 @@
-.one-line-price{
-    display: inline-block;
-}
 
 .btn {
     margin: 2px;
@@ -22,4 +19,8 @@
     .thumbnail {
         height: 540px;
     }
+}
+
+.thumbnail:hover {
+    cursor: pointer;
 }

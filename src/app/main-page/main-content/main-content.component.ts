@@ -1,3 +1,4 @@
+import { Goods } from './../../model/goods';
 import { MainServiseService } from './../../servises/main-servise.service';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MainContentComponent implements OnInit {
   @Input() title: string;
-  items: any[] = [];
+  items: Goods[] = [];
 
   constructor(private mainServise: MainServiseService) { 
   }

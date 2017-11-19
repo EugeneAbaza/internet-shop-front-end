@@ -1,3 +1,4 @@
+import { Goods } from './../../model/goods';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-  @Input() private item: any;
+  @Input() private item: Goods;
 
   constructor() { }
 

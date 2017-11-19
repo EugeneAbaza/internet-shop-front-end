@@ -1,0 +1,40 @@
+
+<div id="goods-cz" >
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default"> <!-- Характеристики -->
+        <div class="panel-body">
+           <table class="table">
+             <thead>
+               <tr>
+                 <th>{{cpu.goods.name}}</th>
+                 <th></th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>Процессор</td>
+                 <td>{{cpu.name + ' ' + cpu.model}}</td>
+                 <td></td>
+               </tr>
+               <tr>
+                  <td>Количество ядер</td>
+                  <td>{{cpu.countOfCores}}</td>
+                  <td></td>
+                </tr>
+                <tr>
+                    <td>Частота ядер</td>
+                    <td>{{cpu.frequencyMin + ' - ' + cpu.frequencyMax + ' ГГрц'}}</td>
+                    <td></td>
+                </tr>
+               <tr>
+                 <td>Производитель</td>
+                 <td>{{cpu.vendor}}</td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>

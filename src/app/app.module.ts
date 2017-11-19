@@ -1,3 +1,6 @@
+import { CpuService } from './servises/cpu.service';
+import { LaptopService } from './servises/laptop.service';
+import { GoodsService } from './servises/goods.service';
 import { CategoryElementsService } from './servises/category-elements.service';
 import { CategoriesServiceService } from './servises/categories-service.service';
 import { MainServiseService } from './servises/main-servise.service';
@@ -18,6 +21,9 @@ import { CategoriesComponent } from './categories/categories.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { CategoriesListComponent } from './categories/categories-list/categories-list.component';
 import { CategoryElementsComponent } from './categories/category-elements/category-elements.component';
+import { GoodsComponent } from './goods/goods.component';
+import { LaptopComponent } from './goods/laptop/laptop.component';
+import { CpuComponent } from './goods/cpu/cpu.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,10 @@ import { CategoryElementsComponent } from './categories/category-elements/catego
     CategoriesComponent,
     MainPageComponent,
     CategoriesListComponent,
-    CategoryElementsComponent
+    CategoryElementsComponent,
+    GoodsComponent,
+    LaptopComponent,
+    CpuComponent
   ],
   imports: [
     BrowserModule,
@@ -41,13 +50,17 @@ import { CategoryElementsComponent } from './categories/category-elements/catego
       {path: 'main', component: MainPageComponent},
       {path: 'categories/:id', component: CategoriesComponent},
       {path: 'categories', component: CategoriesComponent},
+      {path: 'goods/:catId/:id', component: GoodsComponent},
       {path: '**', component: MainPageComponent}
     ])
   ],
   providers: [
     MainServiseService,
     CategoriesServiceService,
-    CategoryElementsService
+    CategoryElementsService,
+    GoodsService,
+    LaptopService,
+    CpuService
   ],
   bootstrap: [AppComponent]
 })
