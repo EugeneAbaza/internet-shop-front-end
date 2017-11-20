@@ -24,6 +24,7 @@ import { CategoryElementsComponent } from './categories/category-elements/catego
 import { GoodsComponent } from './goods/goods.component';
 import { LaptopComponent } from './goods/laptop/laptop.component';
 import { CpuComponent } from './goods/cpu/cpu.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CpuComponent } from './goods/cpu/cpu.component';
     CategoryElementsComponent,
     GoodsComponent,
     LaptopComponent,
-    CpuComponent
+    CpuComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,7 @@ import { CpuComponent } from './goods/cpu/cpu.component';
       {path: 'categories/:id', component: CategoriesComponent},
       {path: 'categories', component: CategoriesComponent},
       {path: 'goods/:catId/:id', component: GoodsComponent},
+      {path: 'login', component: LoginComponent},
       {path: '**', component: MainPageComponent}
     ])
   ],
