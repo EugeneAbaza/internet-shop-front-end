@@ -1,3 +1,4 @@
+<div class="col-md-12">
 <div class="panel panel-default">
   <div class="panel-heading">{{title}}</div>
     <div class="panel-body">
@@ -5,7 +6,8 @@
         <item [item]="item"></item>
       </div>
       <div *ngIf="!items.length" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <p>Возникли неполадки с сервером...</p>  
+        <p>Загрузка...</p>
       </div>
     </div>
+</div>
 </div>
