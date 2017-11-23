@@ -1,3 +1,8 @@
+import { PrivateOfficeComponent } from './private-office/private-office.component';
+
+import { AuthGuardService } from './servises/auth-guard.service';
+import { CookieService } from './servises/cookie.service';
+import { LoginService } from './servises/login.service';
 import { CpuService } from './servises/cpu.service';
 import { LaptopService } from './servises/laptop.service';
 import { GoodsService } from './servises/goods.service';
@@ -25,6 +30,7 @@ import { GoodsComponent } from './goods/goods.component';
 import { LaptopComponent } from './goods/laptop/laptop.component';
 import { CpuComponent } from './goods/cpu/cpu.component';
 import { LoginComponent } from './login/login.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +48,9 @@ import { LoginComponent } from './login/login.component';
     GoodsComponent,
     LaptopComponent,
     CpuComponent,
-    LoginComponent
+    LoginComponent,
+    LoaderComponent,
+    PrivateOfficeComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +62,7 @@ import { LoginComponent } from './login/login.component';
       {path: 'categories', component: CategoriesComponent},
       {path: 'goods/:catId/:id', component: GoodsComponent},
       {path: 'login', component: LoginComponent},
+      {path: 'office',canActivate: [AuthGuardService], component: PrivateOfficeComponent},
       {path: '**', component: MainPageComponent}
     ])
   ],
@@ -63,7 +72,10 @@ import { LoginComponent } from './login/login.component';
     CategoryElementsService,
     GoodsService,
     LaptopService,
-    CpuService
+    CpuService,
+    LoginService,
+    CookieService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

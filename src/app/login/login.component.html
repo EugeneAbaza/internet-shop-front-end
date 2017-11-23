@@ -16,7 +16,7 @@
               <span class="input-group-addon input-group-addon2"  id="basic-addon1">Имя</span>
               <input ngModel 
                     #n="ngModel" 
-                    name="name"
+                    name="firstName"
                     required
                     minlength="3"
                     maxlength="30"
@@ -61,7 +61,7 @@
               <span class="input-group-addon input-group-addon2" id="basic-addon1">Email</span>
               <input ngModel 
               #login="ngModel" 
-              name="login" 
+              name="email" 
               required 
               maxlength="40" 
               minlength="10"
@@ -124,12 +124,12 @@
       <div *ngIf="active == 1" class="panel panel-default">
         <div class="panel-heading">Поле авторизации</div>
             <div class="panel-body">
-              <form ngForm #f="ngForm" (submit)="logIn(f)">
+              <form ngForm #f="ngForm" (submit)="logIn(f.value)">
                 <div class="input-group">
                   <span class="input-group-addon input-group-addon1" id="basic-addon1">Email</span>
                   <input ngModel 
                           #login="ngModel" 
-                          name="login" 
+                          name="email" 
                           required 
                           maxlength="40" 
                           minlength="10"

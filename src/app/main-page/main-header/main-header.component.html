@@ -21,11 +21,18 @@
        
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    <li><a id="paragraph" routerLink="/office">
-      <img id="account-image" src="assets/images/delldo.jpg" width=20px alt="..."> Личный кабинет
+    <li *ngIf="!service.isUserLoggedIn()"><a id="paragraph" routerLink="/office">
+      <img id="account-image" src="assets/images/delldo.jpg" width=20px alt="..."> Войти
         <span class="sr-only">(current)</span>
       </a>
     </li>
+    <li *ngIf="service.isUserLoggedIn()" class="dropdown">
+        <a id="paragraph" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Личный кабинет<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/office" routerActiveLink="active-me">Личная информация</a></li>
+          <li><a (click)="logOut()">Выйти</a></li>
+        </ul>
+      </li>
     <li><a id="paragraph" routerLink="/">Корзина
       <span id="indicator" class="badge">0</span> <span class="sr-only">(current)</span></a></li>
     
