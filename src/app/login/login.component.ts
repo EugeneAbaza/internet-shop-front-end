@@ -2,6 +2,7 @@ import { CookieService } from './../servises/cookie.service';
 import { LoginService } from './../servises/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'login',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   private active = 1;
-  constructor(private service: LoginService, private cookie: CookieService, private router: Router) { }
+  constructor(private service: LoginService, private cookie: CookieService, private router: Router, public snakBar: MatSnackBar) { }
 
   ngOnInit() {
     let e = this.cookie.getCookie('email');
@@ -33,6 +34,8 @@ export class LoginComponent implements OnInit {
           this.cookie.setCookie('password', val.pass, 30);
           this.service.logInUser();
           this.router.navigate([this.service.getRedirectUrl() || '']);
+        } else if(result == 1 || result == 2) {
+          this.snakBar.open('Неверный email или пароль', 'Закрыть', {duration: 2000});
         }
       });
   }
@@ -46,6 +49,8 @@ export class LoginComponent implements OnInit {
           this.cookie.setCookie('password', val.password, 30);
           this.service.logInUser();
           this.router.navigate([this.service.getRedirectUrl() || '']);  
+        } else if(result == 1){
+          this.snakBar.open('Пользователь ст каим email уже зарегистрирован', 'Закрыть', {duration: 2000});
         }
       });
   }

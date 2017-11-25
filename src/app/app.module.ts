@@ -40,6 +40,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatProgressSpinnerModule,
     MatButtonModule,
     MatTabsModule,
+    MatSnackBarModule,
+    MatExpansionModule,
     HttpModule,
     RouterModule.forRoot([
       {path: 'main', component: MainPageComponent},

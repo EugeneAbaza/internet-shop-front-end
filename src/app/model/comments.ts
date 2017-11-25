@@ -6,5 +6,11 @@ export class Comments{
     private name: string;
     public date: Date;
 
-    constructor(){}
+    constructor(id: number, goodsId: number, comment:string, name:string, date:Date){
+        this.id = id;
+        this.name = name;
+        this.goodsId = goodsId;
+        this.comment = comment;
+        this.date = date;
+    }
 }

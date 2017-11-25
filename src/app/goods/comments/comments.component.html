@@ -12,7 +12,51 @@
             {{com.comment}}
           </div>
           <div class="panel-body">
-            {{com.date}}
+            {{getStringDate(com.date)}}
           </div>
         </div>
+        <div class="add">
+        
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Добавить отзыв
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+            <form ngForm #f="ngForm" (submit)="addComment(f.value)"> 
+              <mat-form-field>
+                  <input ngModel 
+                    #n="ngModel" 
+                    name="name"
+                    required
+                    minlength="3"
+                    maxlength="30"
+                    pattern="[а-яА-Я]*$" 
+                    type="text" 
+                    placeholder="Имя"
+                    matInput >
+                  <mat-error *ngIf="n.hasError('required')">
+                    Это поле обязательно к заполнению
+                  </mat-error>
+                  <mat-error *ngIf="n.hasError('pattern' || 'minlenght' || 'maxlenght') ">
+                      Имя не валидного формата
+                  </mat-error>
+              </mat-form-field>  
+              <mat-form-field>
+                  <textarea ngModel 
+                    #comment="ngModel" 
+                    name="comment"
+                    required
+                    minlength="3"
+                    maxlength="255"
+                    placeholder="Комментарий"
+                    matInput ></textarea>
+                  <mat-error *ngIf="comment.hasError('required')">
+                    Это поле обязательно к заполнению
+                  </mat-error>
+              </mat-form-field>
+              <button type="submit" [disabled]="f.invalid" mat-raised-button color="primary">Добавить</button>
+            </form>    
+        </mat-expansion-panel>
+      </div>
       </div>
