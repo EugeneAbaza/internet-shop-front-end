@@ -1,0 +1,18 @@
+<div class="col-lg-3">
+    <div class="panel panel-color">
+        <div class="panel-heading">
+          Отзывы
+        </div></div>
+        <p *ngIf="comments.length == 0">Комментариев нет</p>
+        <div class="panel panel-default" *ngFor="let com of comments">
+          <div class="panel-heading">
+            {{com.name}}
+          </div>
+          <div class="panel-body">
+            {{com.comment}}
+          </div>
+          <div class="panel-body">
+            {{com.date}}
+          </div>
+        </div>
+      </div>
