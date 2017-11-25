@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoodsComponent implements OnInit {
   private goods: Goods = new Goods();
+  private load = false;
   private tab: number = 1;
   constructor(private service: GoodsService, private route: ActivatedRoute) { }
 
@@ -20,6 +21,7 @@ export class GoodsComponent implements OnInit {
         this.service.get(id)
           .subscribe(response =>{
             this.goods = response.json();
+            this.load = true;
           });
       });
   }

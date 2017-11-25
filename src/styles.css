@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Play:400,700&subset=cyrillic');
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
-
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 * {
 	font-family: 'Play', Arial, sans-serif;
 }

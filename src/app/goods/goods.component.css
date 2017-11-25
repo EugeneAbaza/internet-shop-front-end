@@ -1,3 +1,10 @@
 .nav-tabs > li:hover {
     cursor: pointer;
 }
+
+.spinner-wrapper {
+    display: flex;
+    justify-content: space-around;
+    height: 80vh;
+    align-items: center;
+}

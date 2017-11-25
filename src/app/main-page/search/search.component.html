@@ -1,8 +1,7 @@
-<div class="col-md-12">
-<div class="input-group  search-pannel">
-    <input type="text" class="form-control" placeholder="Поиск">
-    <span class="input-group-btn">
-    <button class="btn btn-default" type="button">Искать!</button>
-    </span>
-</div>
+<div class="col-md-12 displ">
+    <mat-form-field>
+        <input ngModel #i="ngModel" required name="search" matInput placeholder="Поиск">
+    </mat-form-field>
+    <button mat-raised-button [disabled]="i.invalid" color="primary">Поиск</button>
+
 </div>

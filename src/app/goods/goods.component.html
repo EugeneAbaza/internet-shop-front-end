@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="load">
     <div id="page-header" class="page-header">
         <div class="row">
           <div class="col-xs-12 col-md-4">
@@ -109,46 +109,12 @@
     </div>
   </div>  
 </div>
-    <div class="col-lg-3">
-      <div class="panel panel-color">
-          <div class="panel-heading">
-            Отзывы
-          </div></div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              Имя пользователя
-            </div>
-            <div class="panel-body">
-              Комментарий
-            </div>
-            <p>
-              <a href="#" class="btn btn-primary" role="button">
-                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-              </a> 
-              <a href="#" class="btn btn-default" role="button">
-                <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-              </a>
-            </p>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              Имя пользователя
-            </div>
-            <div class="panel-body">
-              Комментарий
-            </div>
-            <p>
-              <a href="#" class="btn btn-primary" role="button">
-                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-              </a> 
-              <a href="#" class="btn btn-default" role="button">
-                <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-              </a>
-            </p>
-          </div>
-        </div>
+    <comments></comments>
       </div>
     </div>
+</div>
+<div class="container-fluid content spinner-wrapper" *ngIf="!load">
+  <mat-progress-spinner mode="indeterminate" strokeWidth="2"></mat-progress-spinner>
 </div>
 <footer></footer>
 

@@ -1,193 +1,145 @@
 <div id="registration-form" class="container-fluid">
-  <div class="row">
-    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 col-lg-offset-4 col-md-offset-4 col-xs-offset-3 col-sm-offset-3 text-center">
-      <!--кнопки нужно подогнать под цвета сайта -->		
-      <ul class="nav nav-pills">
-        <li role="presentation" [class.active]="active" (click)="changeTab(1)"><a>Войти</a></li>
-        <li role="presentation" [class.active]="active" (click)="changeTab(2)"><a>Регистрация</a></li>
-      </ul><br/>
-      <div *ngIf="active == 2" class="panel panel-default">
-        <div class="panel-heading">
-          Форма регистрации пользователя
-        </div>
-        <div class="panel-body">
-          <form ngForm #f="ngForm" (submit)="reg(f)">
-            <div class="input-group">
-              <span class="input-group-addon input-group-addon2"  id="basic-addon1">Имя</span>
-              <input ngModel 
-                    #n="ngModel" 
-                    name="firstName"
+  
+    <div class="col-md-12 flex-content">
+        
+      <mat-tab-group>
+          <mat-tab label="Вход">
+            <form ngForm #f="ngForm" (submit)="logIn(f.value)"> 
+              <mat-form-field>
+                  <input ngModel 
+                  #login="ngModel" 
+                  name="email" 
+                  required 
+                  maxlength="40" 
+                  minlength="10"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                  matInput 
+                  placeholder="Email">
+                  <mat-error *ngIf="login.hasError('required')">
+                    Это поле обязательно к заполнению
+                  </mat-error>
+                  <mat-error *ngIf="login.hasError('pattern' || 'minlenght' || 'maxlenght') ">
+                      Email не валидного формата
+                  </mat-error>
+              </mat-form-field>
+                <mat-form-field>
+                    <input ngModel 
+                    #pass="ngModel" 
+                    name="pass" 
                     required
-                    minlength="3"
-                    maxlength="30"
-                    pattern="[а-яА-Я]*$"
-                    [class.invalid]="n.touched && n.invalid" 
-                    type="text" 
-                    class="form-control" 
-                    placeholder="Имя" 
-                    aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group">
-              <span class="input-group-addon input-group-addon2" id="basic-addon1">Фамилия</span>
-              <input type="text"
-                    ngModel 
-                    #lastName="ngModel" 
-                    name="lastName"
-                    required
-                    minlength="3"
-                    maxlength="40"
-                    pattern="[а-яА-Я]*$"
-                    [class.invalid]="lastName.touched && lastName.invalid"
-                    class="form-control" 
-                    placeholder="Фамилия" 
-                    aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group">
-              <span class="input-group-addon input-group-addon2" id="basic-addon1">Отчество</span>
-              <input ngModel
-                    #patronymic="ngModel" 
-                    name="patronymic"
-                    required
-                    minlength="5"
-                    maxlength="30"
-                    pattern="[а-яА-Я]*$"
-                    [class.invalid]="patronymic.touched && patronymic.invalid"
-                    type="text" 
-                    class="form-control" 
-                    placeholder="Отчество" 
-                    aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group">
-              <span class="input-group-addon input-group-addon2" id="basic-addon1">Email</span>
-              <input ngModel 
-              #login="ngModel" 
-              name="email" 
-              required 
-              maxlength="40" 
-              minlength="10"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-              [class.invalid]="login.touched && login.invalid" 
-              type="text" 
-              class="form-control" 
-              placeholder="Email" 
-              aria-describedby="basic-addon1">
-            </div>
-            <div *ngIf="login.touched && login.invalid">
-              <div class="alert alert-danger" *ngIf="login.errors.required">
-                Поле обязательно для заполнения
-              </div>
-              <div class="alert alert-danger" *ngIf="login.errors.pattern">
-                Email не верного формата  
-              </div>
-              <div class="alert alert-danger" *ngIf="login.errors.minlength">
-                Минимальная длина 10 символов  
-              </div>
-              <div class="alert alert-danger" *ngIf="login.errors.maxlength">
-                Максимальная длина 40 символов  
-              </div>
-            </div>
-            <div class="input-group">
-              <span class="input-group-addon input-group-addon2" id="basic-addon1">Пароль</span>
-              <input ngModel 
-              #pass="ngModel" 
-              name="pass" 
-              required 
-              minlength="8"
-              maxlength="16"
-              pattern="^.*(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*$"
-              [class.invalid]="pass.touched && pass.invalid" 
-              type="password" 
-              class="form-control" 
-              placeholder="Пароль" 
-              aria-describedby="basic-addon1">
-            </div>
-            <div *ngIf="pass.touched && pass.invalid">
-              <div class="alert alert-danger" *ngIf="pass.errors.required">
-                 Поле обязательно для заполнения
-               </div>
-              <div class="alert alert-danger" *ngIf="pass.errors.minlength">
-                Минимальная длина 8 символов  
-              </div>
-              <div class="alert alert-danger alert-dangerp" *ngIf="pass.errors.pattern">
-                Пароль должен содержать минимум одну заглавную букву и цифру  
-              </div>
-              <div class="alert alert-danger" *ngIf="pass.errors.maxlength">
-                Максимальная длина 16 символов  
-               </div>
-            </div>
-            <br/>
-            <button type="submit" class="btn btn-primary" [class.disabled]="f.invalid" role="button">Регистрация</button>							
-          </form>
-        </div>
-      </div>
+                    matInput
+                    placeholder="Пароль" 
+                    minlength="8"
+                    maxlength="16"
+                    pattern="^.*(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*$" 
+                    type="password" >
+                    <mat-error *ngIf="pass.hasError('required')">
+                      Это поле обязательно к заполнению
+                    </mat-error>
+                    <mat-error *ngIf="pass.hasError('pattern' || 'minlenght' || 'maxlenght') ">
+                        Email не валидного формата
+                    </mat-error>
+                </mat-form-field>
+                <button type="submit" [disabled]="f.invalid" mat-raised-button color="primary">Войти</button>
+              </form>
+                      
+          </mat-tab>
 
-      <div *ngIf="active == 1" class="panel panel-default">
-        <div class="panel-heading">Поле авторизации</div>
-            <div class="panel-body">
-              <form ngForm #f="ngForm" (submit)="logIn(f.value)">
-                <div class="input-group">
-                  <span class="input-group-addon input-group-addon1" id="basic-addon1">Email</span>
-                  <input ngModel 
-                          #login="ngModel" 
-                          name="email" 
-                          required 
-                          maxlength="40" 
-                          minlength="10"
-                          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                          [class.invalid]="login.touched && login.invalid" 
-                          type="text" 
-                          class="form-control" 
-                          placeholder="Email" 
-                          aria-describedby="basic-addon1">
-                </div>
-                <div *ngIf="login.touched && login.invalid">
-                  <div class="alert alert-danger" *ngIf="login.errors.required">
-                    Поле обязательно для заполнения
-                  </div>
-                  <div class="alert alert-danger" *ngIf="login.errors.pattern">
-                    Email не верного формата  
-                  </div>
-                  <div class="alert alert-danger" *ngIf="login.errors.minlength">
-                    Минимальная длина 10 символов  
-                  </div>
-                  <div class="alert alert-danger" *ngIf="login.errors.maxlength">
-                    Максимальная длина 40 символов  
-                  </div>
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon input-group-addon1" id="basic-addon1">Пароль</span>
-                  <input ngModel 
+          <mat-tab label="Регистрация">
+              <form ngForm #fr="ngForm" (submit)="reg(fr.value)"> 
+                  <mat-form-field>
+                      <input ngModel 
+                        #n="ngModel" 
+                        name="firstName"
+                        required
+                        minlength="3"
+                        maxlength="30"
+                        pattern="[а-яА-Я]*$" 
+                        type="text" 
+                        placeholder="Имя"
+                        matInput >
+                      <mat-error *ngIf="n.hasError('required')">
+                        Это поле обязательно к заполнению
+                      </mat-error>
+                      <mat-error *ngIf="n.hasError('pattern' || 'minlenght' || 'maxlenght') ">
+                          Имя не валидного формата
+                      </mat-error>
+                  </mat-form-field>  
+                  <mat-form-field>
+                      <input ngModel 
+                        #lastName="ngModel" 
+                        name="lastName"
+                        required
+                        minlength="3"
+                        maxlength="40"
+                        pattern="[а-яА-Я]*$"
+                        placeholder="Фамилия"
+                        matInput >
+                      <mat-error *ngIf="lastName.hasError('required')">
+                        Это поле обязательно к заполнению
+                      </mat-error>
+                      <mat-error *ngIf="lastName.hasError('pattern' || 'minlenght' || 'maxlenght') ">
+                        Фамилия не валидного формата
+                      </mat-error>
+                  </mat-form-field> 
+                  <mat-form-field>
+                      <input ngModel 
+                        #patronymic="ngModel" 
+                        name="patronymic"
+                        required
+                        minlength="5"
+                        maxlength="30"
+                        pattern="[а-яА-Я]*$"
+                        type="text" 
+                        placeholder="Отчество" 
+                        matInput >
+                      <mat-error *ngIf="patronymic.hasError('required')">
+                        Это поле обязательно к заполнению
+                      </mat-error>
+                      <mat-error *ngIf="patronymic.hasError('pattern' || 'minlenght' || 'maxlenght') ">
+                        Отчество не валидного формата
+                      </mat-error>
+                  </mat-form-field>  
+                <mat-form-field>
+                      <input ngModel 
+                      #login="ngModel" 
+                      name="email" 
+                      required 
+                      maxlength="40" 
+                      minlength="10"
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                      matInput 
+                      placeholder="Email">
+                      <mat-error *ngIf="login.hasError('required')">
+                        Это поле обязательно к заполнению
+                      </mat-error>
+                      <mat-error *ngIf="login.hasError('pattern' || 'minlenght' || 'maxlenght') ">
+                          Email не валидного формата
+                      </mat-error>
+                  </mat-form-field>
+                    <mat-form-field>
+                        <input ngModel 
                         #pass="ngModel" 
                         name="pass" 
-                        required 
+                        required
+                        matInput
+                        placeholder="Пароль" 
                         minlength="8"
                         maxlength="16"
-                        pattern="^.*(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*$"
-                        [class.invalid]="pass.touched && pass.invalid" 
-                        type="password" 
-                        class="form-control" 
-                        placeholder="Пароль" 
-                        aria-describedby="basic-addon1">
-                </div>
-                <div *ngIf="pass.touched && pass.invalid">
-                    <div class="alert alert-danger" *ngIf="pass.errors.required">
-                      Поле обязательно для заполнения
-                    </div>
-                    <div class="alert alert-danger" *ngIf="pass.errors.minlength">
-                      Минимальная длина 8 символов  
-                    </div>
-                    <div class="alert alert-danger alert-dangerp" *ngIf="pass.errors.pattern">
-                      Пароль должен содержать минимум одну заглавную букву и цифру  
-                    </div>
-                    <div class="alert alert-danger" *ngIf="pass.errors.maxlength">
-                      Максимальная длина 16 символов  
-                    </div>
-                  </div>
-                <br/>
-                <button type="submit" class="btn btn-primary" [class.disabled]="f.invalid" role="button">Войти</button>
-              </form>
-            </div>
-          </div>
-    </div>
+                        pattern="^.*(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*$" 
+                        type="password" >
+                        <mat-error *ngIf="pass.hasError('required')">
+                          Это поле обязательно к заполнению
+                        </mat-error>
+                        <mat-error *ngIf="pass.hasError('pattern' || 'minlenght' || 'maxlenght') ">
+                            Email не валидного формата
+                        </mat-error>
+                    </mat-form-field>
+                    <button type="submit" [disabled]="fr.invalid" mat-raised-button color="primary">Регистрация</button>
+                  </form>
+                
+          </mat-tab>
+        </mat-tab-group>
   </div>
 </div>
+<footer></footer>

@@ -37,9 +37,7 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  reg(x){
-    let val = x.value;
-    console.log(val);
+  reg(val){
     this.service.registration(val)
       .subscribe(resp =>{
         let result = resp.json();

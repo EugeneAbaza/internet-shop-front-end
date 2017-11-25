@@ -1,3 +1,4 @@
+import { CommentsService } from './servises/comments.service';
 import { PrivateOfficeComponent } from './private-office/private-office.component';
 
 import { AuthGuardService } from './servises/auth-guard.service';
@@ -31,6 +32,14 @@ import { LaptopComponent } from './goods/laptop/laptop.component';
 import { CpuComponent } from './goods/cpu/cpu.component';
 import { LoginComponent } from './login/login.component';
 import { LoaderComponent } from './loader/loader.component';
+import { CommentsComponent } from './goods/comments/comments.component';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -50,11 +59,18 @@ import { LoaderComponent } from './loader/loader.component';
     CpuComponent,
     LoginComponent,
     LoaderComponent,
-    PrivateOfficeComponent
+    PrivateOfficeComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatButtonModule,
+    MatTabsModule,
     HttpModule,
     RouterModule.forRoot([
       {path: 'main', component: MainPageComponent},
@@ -75,7 +91,8 @@ import { LoaderComponent } from './loader/loader.component';
     CpuService,
     LoginService,
     CookieService,
-    AuthGuardService
+    AuthGuardService,
+    CommentsService
   ],
   bootstrap: [AppComponent]
 })

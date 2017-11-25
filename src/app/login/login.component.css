@@ -25,3 +25,21 @@ li {
 .alert-dangerp {
     height: 50px;
 }
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-tab-group {
+    height: 80vh;
+    width: 400px !important;
+}
+
+input {
+    width: 100% !important;
+}
+
+.flex-content{
+    display: flex;
+    justify-content: center;
+}
