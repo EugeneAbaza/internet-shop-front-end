@@ -68,16 +68,15 @@ body {
 	background-color: transparent!important;
 }
 .btn-default:hover {
-	border-color: #FF8023!important;
-	background-color: #FF8023!important;
-	color: white!important;
+	color: #FF8023!important;
+	background-color: transparent!important;
 	
 	
 }
 .btn-default {
-	color: #FF8023!important;
-	background-color: transparent!important;
 	border-color: #FF8023!important;
+	background-color: #FF8023!important;
+	color: white!important;
 }
 /*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*/
 
@@ -86,6 +85,12 @@ body {
 	margin-bottom: 0px;
 	color: #FF8023;
 	border-color: transparent;
+}
+#order {
+	margin-top: 15px; 
+}
+#name-of-user {
+	color: white;
 }
 #description {
 	color: white;
