@@ -10,6 +10,7 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  private hide = true;
   private active = 1;
   constructor(private service: LoginService, private cookie: CookieService, private router: Router, public snakBar: MatSnackBar) { }
 

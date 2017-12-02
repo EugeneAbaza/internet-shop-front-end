@@ -1,7 +1,6 @@
 <div id="registration-form" class="container-fluid">
   
     <div class="col-md-12 flex-content">
-        
       <mat-tab-group>
           <mat-tab label="Вход">
             <form ngForm #f="ngForm" (submit)="logIn(f.value)"> 
@@ -32,7 +31,8 @@
                     minlength="8"
                     maxlength="16"
                     pattern="^.*(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*$" 
-                    type="password" >
+                    [type]="hide ? 'password' : 'text'" >
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
                     <mat-error *ngIf="pass.hasError('required')">
                       Это поле обязательно к заполнению
                     </mat-error>

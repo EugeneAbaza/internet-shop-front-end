@@ -1,4 +1,6 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from '../../servises/cookie.service';
 
 @Component({
   selector: 'search',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private cookie: CookieService) { }
 
   ngOnInit() {
+  }
+
+  search(value){
+    this.cookie.setCookie('search', value, 1);
+    this.router.navigate(['search']);
   }
 
 }

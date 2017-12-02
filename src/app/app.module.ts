@@ -1,3 +1,4 @@
+import { SearchService } from './servises/search.service';
 import { CommentsService } from './servises/comments.service';
 import { PrivateOfficeComponent } from './private-office/private-office.component';
 
@@ -42,6 +43,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     LoginComponent,
     LoaderComponent,
     PrivateOfficeComponent,
-    CommentsComponent
+    CommentsComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -75,6 +79,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatTabsModule,
     MatSnackBarModule,
     MatExpansionModule,
+    MatIconModule,
     HttpModule,
     RouterModule.forRoot([
       {path: 'main', component: MainPageComponent},
@@ -83,6 +88,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
       {path: 'goods/:catId/:id', component: GoodsComponent},
       {path: 'login', component: LoginComponent},
       {path: 'office',canActivate: [AuthGuardService], component: PrivateOfficeComponent},
+      {path: 'search', component: SearchResultsComponent},
       {path: '**', component: MainPageComponent}
     ])
   ],
@@ -96,7 +102,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     LoginService,
     CookieService,
     AuthGuardService,
-    CommentsService
+    CommentsService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })
