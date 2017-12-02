@@ -27,6 +27,12 @@ export class LoginService {
     return this.http.post(this.url + 'login', u, options);
   }
 
+  getUser(email){
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+    return this.http.post(this.url + 'user', email, options);
+  }
+
   setRedirectUrl(url: string){
     this.redirectUrl = url;
   }
