@@ -33,9 +33,18 @@
           <li><a (click)="logOut()">Выйти</a></li>
         </ul>
       </li>
-    <li><a id="paragraph" routerLink="/">Корзина
-      <span id="indicator" class="badge">0</span> <span class="sr-only">(current)</span></a></li>
-    
+      <li (added)="added()">
+          <a id="paragraph" routerLink="/goods-cart">
+            Корзина
+            <span id="indicator" class="badge">
+              {{goodsCart.getCount()}}
+            </span> 
+            <span class="sr-only">
+              (current)
+            </span>
+          </a>
+      </li>
+        
     </ul>
   </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

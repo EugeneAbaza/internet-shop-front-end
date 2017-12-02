@@ -5,6 +5,13 @@
       <h4 *ngIf="item.discount" class="old-price one-line-price">{{ item.price }} грн </h4>
       <h4 class="one-line-price">{{item.price - item.discount}} грн</h4>
       <p>{{item.shortDescription}}</p>
-      <p><a [routerLink]="['/goods', item.category.id, item.id]" class="btn btn-primary" role="button">Подробнее</a> <a href="#" class="btn btn-default" role="button">В корзину</a></p>
+      <p>
+        <a [routerLink]="['/goods', item.category.id, item.id]" class="btn btn-primary" role="button">
+          Подробнее
+        </a>
+        <a class="btn btn-default" role="button" (click)="addToGoodsCart($event)" >
+          {{(updateStatus() ? 'Удалить с корзины' : 'В корзину')}}
+        </a>
+      </p>
   </div>
 </div>

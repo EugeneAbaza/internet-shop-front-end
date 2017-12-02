@@ -1,3 +1,4 @@
+import { GoodsCartService } from './servises/goods-cart.service';
 import { SearchService } from './servises/search.service';
 import { CommentsService } from './servises/comments.service';
 import { PrivateOfficeComponent } from './private-office/private-office.component';
@@ -45,6 +46,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { GoodsCartComponent } from './goods-cart/goods-cart.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,8 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     LoaderComponent,
     PrivateOfficeComponent,
     CommentsComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    GoodsCartComponent
   ],
   imports: [
     BrowserModule,
@@ -89,6 +92,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
       {path: 'login', component: LoginComponent},
       {path: 'office',canActivate: [AuthGuardService], component: PrivateOfficeComponent},
       {path: 'search', component: SearchResultsComponent},
+      {path: 'goods-cart', component: GoodsCartComponent},
       {path: '**', component: MainPageComponent}
     ])
   ],
@@ -103,7 +107,8 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     CookieService,
     AuthGuardService,
     CommentsService,
-    SearchService
+    SearchService,
+    GoodsCartService
   ],
   bootstrap: [AppComponent]
 })

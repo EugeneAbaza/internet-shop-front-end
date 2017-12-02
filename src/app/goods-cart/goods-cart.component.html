@@ -1,0 +1,63 @@
+<div class="container-fluid">
+	<div id="page-header" class="page-header">
+		<div class="row">
+		  <div class="otstup col-md-1"></div>
+		  
+		  <div class="col-xs-12 col-md-7">
+              <h1>
+                  Корзина
+                </h1>
+            </div>
+		  <div class="col-xs-12 col-md-4">
+              <h4>
+                  Товаров в корзине на сумму: {{sum()}} грн
+                </h4>
+                <h4>
+                    Количество товаров в корзине: {{goods.length}}
+                </h4>
+		  	<p>
+                <a class="btn btn-primary" [class.disabled]="!goods.length" role="button">
+                    Оформить заказ
+                </a> 
+                <a class="btn btn-default" [class.disabled]="!goods.length" role="button" (click)="clear()">
+                    Очистить корзину
+                </a>
+            </p>
+		  </div>
+		</div>
+	</div>
+	
+	<ul class="nav nav-tabs">
+	  <li role="presentation" class="active"><a id="tabs-notactive" href="#">Добавленные вами товары</a></li>
+
+	</ul>
+    <div *ngIf="!goods.length" class="col-md-12">
+        Корзина пуста<!--сделать красиво-->
+    </div>
+    
+	<div class="panel panel-default">
+	  <!-- Default panel contents -->
+	  
+	  <!-- List group -->
+	  <ul class="list-group">
+		<li class="list-group-item" *ngFor="let item of goods">
+			<div class="media">
+			  <div class="media-left">
+			    <a>
+			      <img class="media-object" [src]="item.image" width="80px" alt="...">
+			    </a>
+			  </div>
+			  <div class="media-body">
+			    <h4 class="media-heading">{{item.name}}</h4>
+			    <p>Цена: {{item.price}} грн</p>
+                <p>
+                    <a class="btn btn-primary" role="button" [routerLink]="['/goods', item.category.id, item.id]">Подробнее</a> 
+                    <a class="btn btn-default" role="button" (click)="remove(item.id)">Удалить из корзины</a>
+                </p>
+			  </div>
+			</div>
+		</li>
+	  </ul>
+	</div>
+</div>
+<footer></footer>
