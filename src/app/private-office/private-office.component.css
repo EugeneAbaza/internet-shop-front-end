@@ -4,3 +4,7 @@
     height: 80vh;
     align-items: center;
 }
+
+.nav:hover{
+    cursor: pointer;
+}

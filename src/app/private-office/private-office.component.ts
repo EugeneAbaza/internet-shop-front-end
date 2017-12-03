@@ -10,7 +10,7 @@ import { User } from './../model/user';
 })
 export class PrivateOfficeComponent implements OnInit {
   private user: User = null;
-  
+  private tab = true;
   constructor(private service: CookieService, private login: LoginService) { }
 
   ngOnInit() {
@@ -21,6 +21,10 @@ export class PrivateOfficeComponent implements OnInit {
         this.user = res.json();
         this.user.password = null;
       });
+  }
+
+  changeTab(){
+    this.tab = !this.tab;
   }
 
 }
