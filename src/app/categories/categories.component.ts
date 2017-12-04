@@ -1,5 +1,6 @@
 import { CategoriesServiceService } from './../servises/categories-service.service';
 import { Component, OnInit } from '@angular/core';
+import { Filters } from '../model/filters';
 
 @Component({
   selector: 'app-categories',
@@ -10,6 +11,8 @@ export class CategoriesComponent implements OnInit {
 
   private categories: any[];
   private id: number;
+  private b = false;
+  private filters = new Filters('', '');
 
   constructor(private service: CategoriesServiceService) { }
 
@@ -22,6 +25,10 @@ export class CategoriesComponent implements OnInit {
 
   onIdChange(event){
     this.id = event;
+  }
+
+  changeFilters(event){
+    this.filters = event;
   }
 
 }

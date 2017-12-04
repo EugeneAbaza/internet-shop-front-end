@@ -1,0 +1,40 @@
+<div class="sidebar" class="panel-body">
+  <ul class="list-group">	
+    <li class="list-group-item">
+        Цена от:
+      <mat-form-field> 
+        <input 
+        ngModel 
+        #priceFrom="ngModel" 
+        name="priceFrom" 
+        pattern="[0-9]{1,6}" 
+        min="0" 
+        matInput 
+        placeholder="Цена от">
+      </mat-form-field>
+    </li>
+    <li class="list-group-item">
+        Цена до:
+        <mat-form-field> 
+          <input 
+          ngModel 
+          #priceTo="ngModel" 
+          name="priceTo" 
+          pattern="[0-9]{1,6}" 
+          min="0" 
+          matInput 
+          placeholder="Цена до">
+        </mat-form-field>
+      </li>
+    <li class="list-group-item">
+      <button 
+      mat-raised-button 
+      [disabled]="priceFrom.invalid || priceTo.invalid" 
+      color="primary"
+      (click)="applyFilters(priceFrom.value, priceTo.value)"
+      >
+        OK
+      </button>
+    </li>						
+  </ul>
+</div>

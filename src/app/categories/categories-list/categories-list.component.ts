@@ -20,7 +20,6 @@ export class CategoriesListComponent implements OnInit {
   ngOnInit() {
     this.rout.paramMap
       .subscribe(maps =>{
-        console.log(maps.get("id"));
         this.id = +maps.get("id");
       });
   }

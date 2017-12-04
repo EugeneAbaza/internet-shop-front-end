@@ -47,6 +47,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { GoodsCartComponent } from './goods-cart/goods-cart.component';
+import { FiltersComponent } from './categories/filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { GoodsCartComponent } from './goods-cart/goods-cart.component';
     PrivateOfficeComponent,
     CommentsComponent,
     SearchResultsComponent,
-    GoodsCartComponent
+    GoodsCartComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,
