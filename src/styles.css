@@ -95,6 +95,28 @@ body {
 #description {
 	color: white;
 }
+#dap-cz {
+	margin-top: 15px;
+}
+#deliver {
+	background-color: #252629;
+	height: 400px;
+}
+#deliver-name {
+	color: #FF8023;
+}
+#deliver-paragraph {
+	color: white;
+}
+#page-header-aboutus {
+	height: 100px !important;
+	border-bottom: solid 1px !important;
+	border-bottom-color: #FF8023 !important; 
+	margin-top: 50px;
+	padding-top: 10px;
+	margin-bottom: 0px;
+	color: #FF8023;
+}
 .thumbnail {
 	 background: transparent!important;
 	border-color: transparent !important;
