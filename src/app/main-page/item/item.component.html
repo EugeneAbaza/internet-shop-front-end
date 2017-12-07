@@ -1,5 +1,5 @@
 <div class="thumbnail" [routerLink]="['/goods',item.category.id, item.id]">
-  <img [src]="item.image" alt="...">
+  <img [src]="item.image" height="200px" alt="...">
     <div class="caption">
       <h3>{{item.name}}</h3>
       <h4 *ngIf="item.discount" class="old-price one-line-price">{{ item.price }} грн </h4>
