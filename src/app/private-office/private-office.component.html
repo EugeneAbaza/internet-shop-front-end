@@ -13,7 +13,7 @@
           Личный кабинет
         </h1>
         <h1 id="name-of-user">
-          {{user.firstName + ' ' + user.lastName + ' ' + user.patronymic}}
+          
         </h1>
       </div>
 		</div>
@@ -31,75 +31,82 @@
 				Личные данные
 			</a>
 		</li>
-	 
 	</ul>
 
 <div class="row" *ngIf="tab">
-	
-<div class="col-xs-12 col-md-12">	
-<div id="order" class="panel panel-default">
-	  	<div class="panel-heading">Заказ №ххххххх</div>
-  		<div class="panel-body">
-	  <ul class="list-group">
-		<li class="list-group-item">
-			<div class="media">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="assets/images/goods/dell.jpg" width="80px" alt="...">
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Dell XPS 15 9550 (X5581S0NDW-46S)</h4>
-			    <p>Цена: 39 999 грн</p>
-			    <p><a href="#" class="btn btn-primary" role="button">Подробнее</a>
-			  </div>
+	<div class="col-xs-12 col-md-12">
+		<div *ngIf="!orderModel.length">
+			<p>Список пуст</p>
+		</div>
+		<div id="order" class="panel panel-default" *ngFor="let o of orderModel">
+			<div class="panel-heading">
+				Заказ №{{o.id}}
 			</div>
-		</li>
-		<li class="list-group-item">
-			<div class="media">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="assets/images/goods/dell.jpg" width="80px" alt="...">
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Dell XPS 15 9550 (X5581S0NDW-46S)</h4>
-			    <p>Цена: 39 999 грн</p>
-			    <p><a href="#" class="btn btn-primary" role="button">Подробнее</a>
-			  </div>
+			<div class="panel-body">
+				<table class="table">
+					<tr>
+						<td>
+							<p>
+								Адресс доставки заказа:
+							</p>
+						</td>
+						<td>
+							<p>
+								{{o.deliveredCity + ', почтовое отделаение № ' + o.postOfficeNumber}}
+							</p>
+						</td>
+					</tr>
+					<tr>
+							<td>
+								<p>
+									Тип оплаты:
+								</p>
+							</td>
+							<td>
+								<p>
+									{{o.paymentType}}
+								</p>
+							</td>
+						</tr>
+					<tr class="big">
+						<td>
+							<p>
+								Итоговая сумма заказа:
+							</p>
+						</td>
+						<td>
+							<p>
+								{{o.summa + ' грн'}}
+							</p>
+						</td>
+					</tr>
+					<td class="col-md-4">
+						<p>Заказанные товары:</p>
+					</td>
+					<td class="col-md-8">
+					</td>
+				</table>
+
+				<ul class="list-group">
+					<li class="list-group-item" *ngFor="let i of o.goodsList">
+						<div class="media">
+							<div class="media-left">
+								<a>
+									<img class="media-object" src="assets/images/goods/dell.jpg" width="80px" alt="...">
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">{{i.goods.name}}</h4>
+								<p>Цена: {{i.goods.price - i.goods.discount}} грн ({{i.count}} шт.)</p>
+								<p><a href="#" class="btn btn-primary" role="button">Подробнее</a>
+							</div>
+						</div>
+					</li>
+				</ul>
 			</div>
-		</li><li class="list-group-item">
-			<div class="media">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="assets/images/goods/dell.jpg" width="80px" alt="...">
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Dell XPS 15 9550 (X5581S0NDW-46S)</h4>
-			    <p>Цена: 39 999 грн</p>
-			    <p><a href="#" class="btn btn-primary" role="button">Подробнее</a>
-			  </div>
-			</div>
-		</li><li class="list-group-item">
-			<div class="media">
-			  <div class="media-left">
-			    <a href="#">
-			      <img class="media-object" src="assets/images/goods/dell.jpg" width="80px" alt="...">
-			    </a>
-			  </div>
-			  <div class="media-body">
-			    <h4 class="media-heading">Dell XPS 15 9550 (X5581S0NDW-46S)</h4>
-			    <p>Цена: 39 999 грн</p>
-			    <p><a href="#" class="btn btn-primary" role="button">Подробнее</a>
-			  </div>
-			</div>
-		</li>
-	  </ul>
+		</div>
 	</div>
-	</div>
-	</div>
-	</div>
+</div>
 
 <div class="panel panel-default" *ngIf="!tab">
   <div class="panel-body">
@@ -107,10 +114,10 @@
     	<div class="col-xs-12 col-md-6">
     		<table class="table">
 			  <tr>
-			    <td><h4>Имя:</h4></td><td><h4>{{user.lastName}}</h4></td>
+			    <td><h4>Имя:</h4></td><td><h4>{{user.firstName}}</h4></td>
 			  </tr>
 			  <tr>
-			    <td><h4>Фамилия:</h4></td><td><h4>{{user.firstName}}</h4></td>
+			    <td><h4>Фамилия:</h4></td><td><h4>{{user.lastName}}</h4></td>
 			  </tr>
 			  <tr>
 			    <td><h4>Отчество:</h4></td><td><h4>{{user.patronymic}}</h4></td>

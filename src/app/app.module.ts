@@ -1,3 +1,4 @@
+import { OrderService } from './servises/order.service';
 import { GoodsCartService } from './servises/goods-cart.service';
 import { SearchService } from './servises/search.service';
 import { CommentsService } from './servises/comments.service';
@@ -110,7 +111,8 @@ import { FiltersComponent } from './categories/filters/filters.component';
     AuthGuardService,
     CommentsService,
     SearchService,
-    GoodsCartService
+    GoodsCartService,
+    OrderService
   ],
   bootstrap: [AppComponent]
 })

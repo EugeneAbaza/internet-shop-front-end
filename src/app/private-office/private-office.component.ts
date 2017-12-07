@@ -1,3 +1,5 @@
+import { Order } from './../model/order';
+import { OrderService } from './../servises/order.service';
 import { LoginService } from './../servises/login.service';
 import { CookieService } from './../servises/cookie.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +13,9 @@ import { User } from './../model/user';
 export class PrivateOfficeComponent implements OnInit {
   private user: User = null;
   private tab = true;
-  constructor(private service: CookieService, private login: LoginService) { }
+  private orderModel: Order[] = [];
+
+  constructor(private service: CookieService, private login: LoginService, private order: OrderService) { }
 
   ngOnInit() {
     let email = this.service.getCookie('email');
@@ -20,6 +24,14 @@ export class PrivateOfficeComponent implements OnInit {
       .subscribe(res =>{
         this.user = res.json();
         this.user.password = null;
+
+        if(this.user && this.user.id){
+          this.order.get(this.user.id)
+            .subscribe(responce =>{
+                this.orderModel = responce.json();
+                console.log(this.orderModel);
+            });
+        }
       });
   }
 

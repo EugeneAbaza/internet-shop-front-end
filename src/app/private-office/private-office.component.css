@@ -8,3 +8,7 @@
 .nav:hover{
     cursor: pointer;
 }
+
+.big {
+    font-size: 18px;
+}

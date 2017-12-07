@@ -5,5 +5,6 @@ export class User{
                 public firstName: string,
                 public lastName: string,
                 public patronymic: string,
-                public rating: number){}
+                public rating: number,
+                public id?: number){}
 }
