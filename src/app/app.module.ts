@@ -49,6 +49,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { GoodsCartComponent } from './goods-cart/goods-cart.component';
 import { FiltersComponent } from './categories/filters/filters.component';
+import { MakeOrderComponent } from './make-order/make-order.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { FiltersComponent } from './categories/filters/filters.component';
     CommentsComponent,
     SearchResultsComponent,
     GoodsCartComponent,
-    FiltersComponent
+    FiltersComponent,
+    MakeOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -96,6 +98,7 @@ import { FiltersComponent } from './categories/filters/filters.component';
       {path: 'office',canActivate: [AuthGuardService], component: PrivateOfficeComponent},
       {path: 'search', component: SearchResultsComponent},
       {path: 'goods-cart', component: GoodsCartComponent},
+      {path: 'order', component: MakeOrderComponent},
       {path: '**', component: MainPageComponent}
     ])
   ],

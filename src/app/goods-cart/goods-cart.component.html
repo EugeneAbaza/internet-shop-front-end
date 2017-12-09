@@ -16,7 +16,7 @@
                     Количество товаров в корзине: {{goods.length}}
                 </h4>
 		  	<p>
-                <a class="btn btn-primary" [class.disabled]="!goods.length" role="button">
+                <a class="btn btn-primary" [class.disabled]="!goods.length" routerLink="/order" role="button">
                     Оформить заказ
                 </a> 
                 <a class="btn btn-default" [class.disabled]="!goods.length" role="button" (click)="clear()">
