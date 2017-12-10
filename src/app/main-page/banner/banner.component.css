@@ -1,0 +1,30 @@
+#banner-button {
+	border-color: white !important;
+	color: white !important;
+	background-color: transparent !important;
+}
+#banner-button:hover {
+	border-color: white !important;
+	color: white !important;
+	background-color: rgba(255,255,255,0.4) !important;
+}
+#slider {
+	margin-top: 50px !important;
+}
+@media screen and (min-width: 768px) and (max-width: 950px) {
+#slider {
+	margin-top: 50px !important;
+}
+}
+@media screen and (max-width: 768px) {
+#slider {
+	margin-top: 50px !important;
+	font-size: 10px;
+}
+h3 {
+	font-size: 11px;
+}
+#banner-button {
+	
+}
+}
