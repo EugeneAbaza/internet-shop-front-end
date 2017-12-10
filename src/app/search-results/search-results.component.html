@@ -1,0 +1,35 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+			<div *ngIf="title" id="page-header" class="page-header">
+        <h1>Результаты поиска по запросу:</h1><h1>"{{title}}"</h1>  
+      </div>
+        
+      <div class="col-md-12 displ" [class.content]="!title">
+        <mat-form-field> 
+          <input ngModel #i="ngModel" required name="search" matInput placeholder="Поиск">
+        </mat-form-field>
+        <button mat-raised-button [disabled]="i.invalid" color="primary" (click)="search(i.value)">Поиск</button>
+      </div>
+			<div *ngIf="!load" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spinner-wrapper">
+					<mat-progress-spinner mode="indeterminate" strokeWidth="2"></mat-progress-spinner>
+			</div>
+			<div *ngIf="load" class="col-lg-12">
+				<div *ngIf="!goods.length && title" class="panel panel-default">
+					<div class="panel-body displ">
+							Поиск не дал результатов
+					</div>
+				</div>
+
+				<div *ngIf="goods.length" class="panel panel-default">
+					<div class="panel-body">
+			  	  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3" *ngFor="let item of goods">
+              <item [item]="item"></item>
+				    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+</div>
+<footer></footer>

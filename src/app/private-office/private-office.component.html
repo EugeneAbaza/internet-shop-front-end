@@ -1,0 +1,163 @@
+<div class="container-fluid content spinner-wrapper" *ngIf="!user">
+    <mat-progress-spinner mode="indeterminate" strokeWidth="2"></mat-progress-spinner>
+  </div>
+
+<div class="container-fluid" *ngIf="user">
+	<div id="page-header" class="page-header">
+		<div class="row">
+		  <div class="otstup col-md-1"></div>
+		  <div class="col-xs-12 col-md-1">
+		  </div>
+		  <div class="col-xs-12 col-md-10">
+        <h1>
+          Личный кабинет
+        </h1>
+        <h1 id="name-of-user">
+          
+        </h1>
+      </div>
+		</div>
+	</div>
+	
+	
+	<ul class="nav nav-tabs" (click)="changeTab()">
+	  <li role="presentation" [class.active]="tab">
+			<a id="tabs-notactive">
+				История покупок
+			</a>
+		</li>
+	  <li role="presentation" [class.active]="!tab">
+			<a id="tabs-notactive">
+				Личные данные
+			</a>
+		</li>
+	</ul>
+
+<div class="row" *ngIf="tab">
+	<div class="col-xs-12 col-md-12">
+		<div *ngIf="!orderModel.length">
+			<p>Список пуст</p>
+		</div>
+		<div id="order" class="panel panel-default" *ngFor="let o of orderModel">
+			<div class="panel-heading">
+				Заказ №{{o.id}}
+			</div>
+			<div class="panel-body">
+				<table class="table">
+					<tr>
+						<td>
+							<p>
+								Адресс доставки заказа:
+							</p>
+						</td>
+						<td>
+							<p>
+								{{o.deliveredCity + ', почтовое отделаение № ' + o.postOfficeNumber}}
+							</p>
+						</td>
+					</tr>
+					<tr>
+							<td>
+								<p>
+									Тип оплаты:
+								</p>
+							</td>
+							<td>
+								<p>
+									{{o.paymentType}}
+								</p>
+							</td>
+						</tr>
+					<tr class="big">
+						<td>
+							<p>
+								Итоговая сумма заказа:
+							</p>
+						</td>
+						<td>
+							<p>
+								{{o.summa + ' грн'}}
+							</p>
+						</td>
+					</tr>
+					<td class="col-md-4">
+						<p>Заказанные товары:</p>
+					</td>
+					<td class="col-md-8">
+					</td>
+				</table>
+
+				<ul class="list-group">
+					<li class="list-group-item" *ngFor="let i of o.goodsList">
+						<div class="media">
+							<div class="media-left">
+								<a>
+									<img class="media-object" src="assets/images/goods/dell.jpg" width="80px" alt="...">
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">{{i.goods.name}}</h4>
+								<p>Цена: {{i.goods.price - i.goods.discount}} грн ({{i.count}} шт.)</p>
+								<p><a href="#" class="btn btn-primary" role="button">Подробнее</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="panel panel-default" *ngIf="!tab">
+  <div class="panel-body">
+    <div class="row">
+    	<div class="col-xs-12 col-md-6">
+    		<table class="table">
+			  <tr>
+			    <td><h4>Имя:</h4></td><td><h4>{{user.firstName}}</h4></td>
+			  </tr>
+			  <tr>
+			    <td><h4>Фамилия:</h4></td><td><h4>{{user.lastName}}</h4></td>
+			  </tr>
+			  <tr>
+			    <td><h4>Отчество:</h4></td><td><h4>{{user.patronymic}}</h4></td>
+			  </tr>
+			  <tr>
+			    <td><h4>e-mail:</h4></td><td><h4>{{user.email}}</h4></td>
+			  </tr>
+			</table>
+    	</div>
+    	<!--<div class="col-xs-12 col-md-4">
+    		<a href="#" class="btn btn-default" role="button">Редактировать профиль</a>
+    	</div>-->
+    </div>
+  </div>
+</div><!--
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+    	<div class="col-xs-12 col-md-6">
+    		<table class="table">
+			  <tr>
+			    <td><h4>Имя:</h4></td><td><input type="text" class="form-control" placeholder=""></td>
+			  </tr>
+			  <tr>
+			    <td><h4>Отчество:</h4></td><td><input type="text" class="form-control" placeholder=""></td>
+			  </tr>
+			  <tr>
+			    <td><h4>Фамилия:</h4></td><td><input type="text" class="form-control" placeholder=""></td>
+			  </tr>
+			  <tr>
+			    <td><h4>e-mail:</h4></td><td><input type="text" class="form-control" placeholder=""></td>
+			  </tr>
+			</table>
+    	</div>
+    	<div class="col-xs-12 col-md-4">
+    		<a href="#" class="btn btn-default" role="button">Сохранить изменения</a>
+    		<a href="#" class="btn btn-default" role="button">Отмена</a>
+    	</div>
+    </div>
+  </div>
+</div>
+</div>-->
+<footer></footer>

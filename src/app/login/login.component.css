@@ -1,0 +1,45 @@
+li {
+    cursor: pointer;
+}
+
+.input-group-addon1 {
+    min-width: 70px;
+    max-width: 70px;
+}
+
+.input-group-addon2 {
+    min-width: 90px;
+    max-width: 90px;
+}
+
+.invalid {
+    border: 2px solid red;
+}
+
+.alert, .alert-danger {
+    height: 30px;
+    padding: 0;
+    margin-bottom: 0px;
+}
+
+.alert-dangerp {
+    height: 50px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-tab-group {
+    height: 80vh;
+    width: 400px !important;
+}
+
+input {
+    width: 100% !important;
+}
+
+.flex-content{
+    display: flex;
+    justify-content: center;
+}

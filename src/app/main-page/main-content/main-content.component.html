@@ -1,8 +1,13 @@
+<div class="col-md-12">
 <div class="panel panel-default">
   <div class="panel-heading">{{title}}</div>
     <div class="panel-body">
       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3" *ngFor="let item of items">
         <item [item]="item"></item>
       </div>
+      <div *ngIf="!items.length" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spinner-wrapper">
+        <mat-progress-spinner mode="indeterminate" strokeWidth="2"></mat-progress-spinner>
+      </div>
     </div>
+</div>
 </div>

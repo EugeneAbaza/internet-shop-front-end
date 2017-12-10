@@ -1,0 +1,8 @@
+<div class="sidebar" class="panel-body">
+  <ul class="list-group">	
+    <li *ngFor="let category of categories" class="list-group-item"
+      (click)="onClick(category.id)" [class.selected]="category.id == id" 
+      [routerLink]="['/categories', category.id]" [queryParams]="{page : 1}"
+      ><a>{{category.name}}</a></li>								
+  </ul>
+</div>

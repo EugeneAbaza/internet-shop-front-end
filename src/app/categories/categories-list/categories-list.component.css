@@ -1,0 +1,16 @@
+li:hover {
+    border-left-color: #1b1c2c;
+    cursor: pointer;
+}
+
+.selected {
+    background: #1b1c2c;
+}
+
+.selected > a {
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+}

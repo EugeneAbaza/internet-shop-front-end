@@ -1,0 +1,14 @@
+.spinner-wrapper {
+    display: flex;
+    justify-content: space-around;
+    height: 80vh;
+    align-items: center;
+}
+
+.nav:hover{
+    cursor: pointer;
+}
+
+.big {
+    font-size: 18px;
+}

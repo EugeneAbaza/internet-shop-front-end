@@ -8,27 +8,43 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">M</a>
+    <a class="navbar-brand" routerLink="/">M</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active"><a id="paragraph" href="index.html">Главная<span class="sr-only">(current)</span></a></li>
-      <li><a id="paragraph" href="catalog.html">Каталог товаров<span class="sr-only">(current)</span></a></li>
-      <li><a id="paragraph" href="#">Оплата и доставка<span class="sr-only">(current)</span></a></li>
-      <li><a id="paragraph" href="#">О нас<span class="sr-only">(current)</span></a></li>
+      <li><a id="paragraph" routerLink="/main" routerLinkActive="active-my">Главная<span class="sr-only">(current)</span></a></li>
+      <li><a id="paragraph" routerLink="/categories" routerLinkActive="active-my">Каталог товаров<span class="sr-only">(current)</span></a></li>
+      <li><a id="paragraph" routerLink="/">Оплата и доставка<span class="sr-only">(current)</span></a></li>
+      <li><a id="paragraph" routerLink="/">О нас<span class="sr-only">(current)</span></a></li>
        
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    <li><a id="paragraph" href="#">
-      <img id="account-image" src="assets/images/delldo.jpg" width=20px alt="..."> Личный кабинет
+    <li *ngIf="!service.isUserLoggedIn()"><a id="paragraph" routerLink="/office">
+      <img id="account-image" src="assets/images/delldo.jpg" width=20px alt="..."> Войти
         <span class="sr-only">(current)</span>
       </a>
     </li>
-    <li><a id="paragraph" href="#">Корзина
-      <span id="indicator" class="badge">0</span> <span class="sr-only">(current)</span></a></li>
-    
+    <li *ngIf="service.isUserLoggedIn()" class="dropdown">
+        <a id="paragraph" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Личный кабинет<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/office" routerActiveLink="active-me">Личная информация</a></li>
+          <li><a (click)="logOut()">Выйти</a></li>
+        </ul>
+      </li>
+      <li (added)="added()">
+          <a id="paragraph" routerLink="/goods-cart">
+            Корзина
+            <span id="indicator" class="badge">
+              {{goodsCart.getCount()}}
+            </span> 
+            <span class="sr-only">
+              (current)
+            </span>
+          </a>
+      </li>
+        
     </ul>
   </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
