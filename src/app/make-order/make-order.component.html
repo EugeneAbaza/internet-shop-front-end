@@ -6,7 +6,7 @@
             <div class="otstup col-md-1"></div>
 
             <div class="col-xs-12 col-md-7"><h1>Оформление заказа</h1></div>
-            <div class="col-xs-12 col-md-4"><h4>Товаров в заказе на сумму: {{sum()}} грн</h4>
+            <div class="col-xs-12 col-md-4"><h4>Товаров в заказе на сумму: {{ sum() }} грн</h4>
               <h4>Количество товаров в заказе: {{countOfEl()}}</h4>
             </div>
           </div>
@@ -42,8 +42,8 @@
           <form ngForm #f="ngForm" (submit)="subm(f.value)">
              Город доставки:
             <select ngModel #city="ngModel" required name="deliveredCity">
-              <option value="Николаев" selected>Николаев</option>
-              <option value="Одесса">Одесса</option>
+              <option value="Николаев" selected>Николаев </option>
+              <option value="Одесса"> Одесса </option>
             </select><br>
              Номер почтового отделения:
             <select ngModel #city="ngModel" required name="postOfficeNumber">

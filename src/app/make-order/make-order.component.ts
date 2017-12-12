@@ -36,7 +36,7 @@ export class MakeOrderComponent implements OnInit {
     return res;
   }
 
-  subm(f) {
+  subm(f)  {
     const orderList = [];
     for (let i = 0; i < this.goods.length; i++)
       orderList[i] = {id: null, order: null, goods: this.goods[i], count: +this.ms[i].value};
@@ -58,10 +58,10 @@ export class MakeOrderComponent implements OnInit {
   }
 
   plus(i) {
-      this.ms[i].value = (+this.ms[i].value + 1) + '';
+      this.ms[i].value =  (+this.ms[i].value + 1) + '';
   }
 
-  minus(i){
+  minus(i) {
     const num = +this.ms[i].value - 1;
     if (num > 0)
       this.ms[i].value = num + '';
