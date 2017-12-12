@@ -1,7 +1,8 @@
-<div class="col-lg-3">
+﻿<div class="col-lg-3">
     <div class="panel panel-color">
         <div class="panel-heading">
-          Отзывы
+     
+     Отзывы
         </div></div>
         <p *ngIf="comments.length == 0">Комментариев нет</p>
         <div class="panel panel-default" *ngFor="let com of comments">
@@ -16,7 +17,9 @@
           </div>
         </div>
         <div class="add">
-        
+   
+
+     
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>
@@ -39,7 +42,8 @@
                     Это поле обязательно к заполнению
                   </mat-error>
                   <mat-error *ngIf="n.hasError('pattern' || 'minlenght' || 'maxlenght') ">
-                      Имя не валидного формата
+                     
+	 Имя не валидного формата
                   </mat-error>
               </mat-form-field>  
               <mat-form-field>

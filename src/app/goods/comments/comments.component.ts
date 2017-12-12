@@ -1,7 +1,9 @@
-import { ActivatedRoute } from '@angular/router';
+﻿import { ActivatedRoute } from '@angular/router';
 import { Comments } from './../../model/comments';
 import { CommentsService } from './../../servises/comments.service';
 import { Component, OnInit, Input } from '@angular/core';
+
+
 
 @Component({
   selector: 'comments',
@@ -14,6 +16,8 @@ export class CommentsComponent implements OnInit {
   private months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
   constructor(private service: CommentsService, private route: ActivatedRoute) { }
 
+
+
   ngOnInit() {
     this.route.paramMap
       .subscribe(par =>{
@@ -24,6 +28,8 @@ export class CommentsComponent implements OnInit {
           });
       });
   }
+
+
 
   addComment(c){
     let comment = new Comments(null, this.id, c.comment, c.name, new Date());
@@ -40,6 +46,8 @@ export class CommentsComponent implements OnInit {
         }
       });
   }
+
+
 
   getStringDate(date: string){
     let d = date.split('-');
