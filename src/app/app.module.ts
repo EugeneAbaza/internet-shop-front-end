@@ -98,7 +98,7 @@ import { MakeOrderComponent } from './make-order/make-order.component';
       {path: 'office',canActivate: [AuthGuardService], component: PrivateOfficeComponent},
       {path: 'search', component: SearchResultsComponent},
       {path: 'goods-cart', component: GoodsCartComponent},
-      {path: 'order', component: MakeOrderComponent},
+      {path: 'order', canActivate: [AuthGuardService] ,component: MakeOrderComponent},
       {path: '**', component: MainPageComponent}
     ])
   ],

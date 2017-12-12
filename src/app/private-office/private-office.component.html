@@ -68,6 +68,18 @@
 								</p>
 							</td>
 						</tr>
+						<tr>
+							<td>
+								<p>
+									Дата заказа:
+								</p>
+							</td>
+							<td>
+								<p>
+									{{o.date}}
+								</p>
+							</td>
+						</tr>
 					<tr class="big">
 						<td>
 							<p>
@@ -92,13 +104,13 @@
 						<div class="media">
 							<div class="media-left">
 								<a>
-									<img class="media-object" src="assets/images/goods/dell.jpg" width="80px" alt="...">
+									<img class="media-object" [src]="i.goods.image" width="80px" alt="...">
 								</a>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">{{i.goods.name}}</h4>
 								<p>Цена: {{i.goods.price - i.goods.discount}} грн ({{i.count}} шт.)</p>
-								<p><a href="#" class="btn btn-primary" role="button">Подробнее</a>
+								<!--<p><a href="#" class="btn btn-primary" role="button">Подробнее</a>-->
 							</div>
 						</div>
 					</li>
