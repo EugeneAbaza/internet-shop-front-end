@@ -3,8 +3,6 @@ import { Comments } from './../../model/comments';
 import { CommentsService } from './../../servises/comments.service';
 import { Component, OnInit, Input } from '@angular/core';
 
-
-
 @Component({
   selector: 'comments',
   templateUrl: './comments.component.html',
@@ -28,7 +26,6 @@ export class CommentsComponent implements OnInit {
           });
       });
   }
-
 
 
   addComment(c){
