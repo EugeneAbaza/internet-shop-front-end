@@ -1,0 +1,13 @@
+#page-header-aboutus {
+	height: 100px !important;
+	border-bottom: solid 1px !important;
+	border-bottom-color: #FF8023 !important; 
+	margin-top: 50px;
+	padding-top: 10px;
+	margin-bottom: 0px;
+    color: #FF8023;
+}
+
+.panel-body{
+    height: 40vh;
+}

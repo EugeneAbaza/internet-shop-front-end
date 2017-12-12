@@ -50,6 +50,8 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { GoodsCartComponent } from './goods-cart/goods-cart.component';
 import { FiltersComponent } from './categories/filters/filters.component';
 import { MakeOrderComponent } from './make-order/make-order.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { DeliveryComponent } from './delivery/delivery.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +76,9 @@ import { MakeOrderComponent } from './make-order/make-order.component';
     SearchResultsComponent,
     GoodsCartComponent,
     FiltersComponent,
-    MakeOrderComponent
+    MakeOrderComponent,
+    AboutUsComponent,
+    DeliveryComponent
   ],
   imports: [
     BrowserModule,
@@ -99,6 +103,8 @@ import { MakeOrderComponent } from './make-order/make-order.component';
       {path: 'search', component: SearchResultsComponent},
       {path: 'goods-cart', component: GoodsCartComponent},
       {path: 'order', canActivate: [AuthGuardService] ,component: MakeOrderComponent},
+      {path: 'about', component: AboutUsComponent},
+      {path: 'delivery', component: DeliveryComponent},
       {path: '**', component: MainPageComponent}
     ])
   ],

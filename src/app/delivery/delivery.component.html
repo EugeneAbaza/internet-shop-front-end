@@ -1,0 +1,77 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+        <div id="page-header" class="page-header">
+            <h1>Доставка и оплата</h1>
+          </div>
+          <ul class="nav nav-tabs" (click)="changeTab()">
+            <li role="presentation" [class.active]="tab"><a id="tabs-notactive" >Доставка</a></li>
+            <li role="presentation" [class.active]="!tab"><a id="tabs-notactive" >Оплата</a></li>
+          </ul>
+          <div id="dap-cz" class="container-fluid" *ngIf="tab">
+            <div class="row">
+              <div class="col-xs-12 col-md-4">
+                <div id="deliver" class="panel panel-default">
+                  <div class="panel-body">
+                    <h1 id="deliver-name">"Нова пошта"</h1>
+                    <p id="deliver-paragraph">Доставка в отделение «Нова пошта»<br/>
+                       С помощью доставки «Нова пошта», Вы можете получить товар даже в самых отдаленных уголках Украины.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-4">
+                <div id="deliver" class="panel panel-default">
+                  <div class="panel-body">
+                    <h1 id="deliver-name">Адресная доставка по Николаеву и области</h1>
+                    <p id="deliver-paragraph">Доставка курьером по адресу<br/> 
+                     Доставка производится до входа в здание
+                     Стоимость доставки 45 грн</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-4">
+                <div id="deliver" class="panel panel-default">
+                  <div class="panel-body">
+                    <h1 id="deliver-name">Мист Экспресс</h1>
+                    <p id="deliver-paragraph">Доставка курьером на дом</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="dap-cz" class="container-fluid" *ngIf="!tab">
+                <div class="row">
+              <div class="col-xs-12 col-md-4">
+                <div id="deliver" class="panel panel-default">
+                  <div class="panel-body">
+                    <h1 id="deliver-name">Наличными</h1>
+                    <p id="deliver-paragraph">Оплата наличными при получении товара</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-4">
+                <div id="deliver" class="panel panel-default">
+                  <div class="panel-body">
+                    <h1 id="deliver-name">Безналичными</h1>
+                    <p id="deliver-paragraph">Оплата по безналичному расчету производится в кассе отделения любого банка или с расчетного счета Вашей фирмы <br/>
+        
+                  При выборе безналичного способа оплаты доставка заказа возможна после поступления средств на наш расчетный счет</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-4">
+                <div id="deliver" class="panel panel-default">
+                  <div class="panel-body">
+                    <h1 id="deliver-name">Visa и MasterCard</h1>
+                    <p id="deliver-paragraph">Оплата заказа онлайн банковской картой Visa и MasterCard<br/>
+        
+                  Доставка товара возможна только после подтверждения платежа.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+<footer></footer>
