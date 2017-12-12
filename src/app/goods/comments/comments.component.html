@@ -1,45 +1,47 @@
-<div class="col-lg-3">
+﻿<div class="col-lg-3">
     <div class="panel panel-color">
         <div class="panel-heading">
-          Отзывы
-        </div></div>
-        <p *ngIf="comments.length == 0">Комментариев нет</p>
-        <div class="panel panel-default" *ngFor="let com of comments">
-          <div class="panel-heading">
-            {{com.name}}
+     
+     		Отзывы
+          </div></div>
+          <p *ngIf="comments.length == 0">Комментариев нет</p>
+          <div class="panel panel-default" *ngFor="let com of comments">
+           <div class="panel-heading">
+             {{com.name}}
+           </div>
+           <div class="panel-body">
+             {{com.comment}}
+           </div>
+           <div class="panel-body">
+             {{getStringDate(com.date)}}
+           </div>
           </div>
-          <div class="panel-body">
-            {{com.comment}}
-          </div>
-          <div class="panel-body">
-            {{getStringDate(com.date)}}
-          </div>
-        </div>
-        <div class="add">
+          <div class="add">
         
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Добавить отзыв
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-            <form ngForm #f="ngForm" (submit)="addComment(f.value)"> 
-              <mat-form-field>
-                  <input ngModel 
-                    #n="ngModel" 
-                    name="name"
-                    required
-                    minlength="3"
-                    maxlength="30"
-                    pattern="[а-яА-Я]*$" 
-                    type="text" 
-                    placeholder="Имя"
-                    matInput >
+         <mat-expansion-panel>
+           <mat-expansion-panel-header>
+             <mat-panel-title>
+               Добавить отзыв
+             </mat-panel-title>
+           </mat-expansion-panel-header>
+             <form ngForm #f="ngForm" (submit)="addComment(f.value)"> 
+               <mat-form-field>
+                    <input ngModel 
+                       #n="ngModel" 
+                        name="name"
+                        required
+                        minlength="3"
+                        maxlength="30"
+                        pattern="[а-яА-Я]*$" 
+                        type="text" 
+                        placeholder="Имя"
+                        matInput >
                   <mat-error *ngIf="n.hasError('required')">
                     Это поле обязательно к заполнению
                   </mat-error>
                   <mat-error *ngIf="n.hasError('pattern' || 'minlenght' || 'maxlenght') ">
-                      Имя не валидного формата
+                     
+	 Имя не валидного формата
                   </mat-error>
               </mat-form-field>  
               <mat-form-field>
@@ -52,11 +54,12 @@
                     placeholder="Комментарий"
                     matInput ></textarea>
                   <mat-error *ngIf="comment.hasError('required')">
-                    Это поле обязательно к заполнению
+                    Это поле обязательно к   заполнению
                   </mat-error>
               </mat-form-field>
-              <button type="submit" [disabled]="f.invalid" mat-raised-button color="primary">Добавить</button>
+              <button type="submit" [disabled]="f.invalid"  mat-raised-button color="primary">Добавить</button>
             </form>    
         </mat-expansion-panel>
-      </div>
+     
+ </div>
       </div>

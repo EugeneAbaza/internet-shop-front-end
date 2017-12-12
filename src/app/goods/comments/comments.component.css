@@ -1,9 +1,16 @@
 .add{
-    display: flex;
+  
+
+ display: flex;
     justify-content: center;
 }
 
+
 mat-form-field {
-    width: 100% !important;
-    margin: 10 0 !important;
+  
+  	width: 100% !important;
+    	margin: 10 0 !important;
+
+
+
 }
