@@ -20,14 +20,14 @@
               <div class="media">
                 <div class="media-left">
                  <a>
-                  <img class="media-object" [src]="item.image" width="80px" alt="...">
+                   <img class="media-object" [src]="item.image" width="80px" alt="...">
                  </a>
                 </div>
                 <div class="media-body">
                   <h4 class="media-heading">{{item.name}}</h4>
                     <p>Цена:  {{item.price}}  грн</p>
                     <p>
-                       Количество: <button  (click)="plus(i)">+</button>
+                        Количество: <button  (click)="plus(i)">+</button>
                       <mat-form-field class="count">
                         <input matInput value="1">
                       </mat-form-field>
