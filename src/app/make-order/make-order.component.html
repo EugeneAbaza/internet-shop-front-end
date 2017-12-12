@@ -1,17 +1,17 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <div id="page-header" class="page-header">
-          <div class="row">
+      <div id="page-header"  class="page-header">
+          <div  class="row">
             <div class="otstup col-md-1"></div>
-            
+
             <div class="col-xs-12 col-md-7"><h1>Оформление заказа</h1></div>
             <div class="col-xs-12 col-md-4"><h4>Товаров в заказе на сумму: {{sum()}} грн</h4>
               <h4>Количество товаров в заказе: {{countOfEl()}}</h4>
             </div>
           </div>
         </div>
-        
+
         <div class="panel panel-default">
           <!-- Default panel contents -->
           <!-- List group -->
@@ -25,9 +25,9 @@
                 </div>
                 <div class="media-body">
                   <h4 class="media-heading">{{item.name}}</h4>
-                    <p>Цена: {{item.price}} грн</p>
+                    <p>Цена:  {{item.price}}  грн</p>
                     <p>
-                      Количество: <button (click)="plus(i)">+</button>
+                       Количество: <button  (click)="plus(i)">+</button>
                       <mat-form-field class="count">
                         <input matInput value="1">
                       </mat-form-field>
@@ -35,24 +35,24 @@
                     </p>
                   </div>
                 </div>
-              </li>                       
+              </li>
           </ul>
         </div>
         <div class="col-md-12">
           <form ngForm #f="ngForm" (submit)="subm(f.value)">
-            Город доставки: 
+             Город доставки:
             <select ngModel #city="ngModel" required name="deliveredCity">
               <option value="Николаев" selected>Николаев</option>
               <option value="Одесса">Одесса</option>
             </select><br>
-            Номер почтового отделения: 
+             Номер почтового отделения:
             <select ngModel #city="ngModel" required name="postOfficeNumber">
-              <option value="1" selected>1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
+              <option value="1" selected> 1 </option>
+              <option value="2"> 2 </option>
+              <option value="3"> 3 </option>
             </select>
             <br>
-            <button type="submit" [disabled]="f.invalid" mat-raised-button color="primary">Заказать</button>
+            <button type="submit"  [disabled]="f.invalid" mat-raised-button color="primary">Заказать</button>
           </form>
         </div>
       </div>
