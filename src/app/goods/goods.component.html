@@ -13,7 +13,7 @@
                 <!-- Wrapper for slides -->
                   <div class="carousel-inner">
                     <div class="item active">
-                      <img [src]="goods.image" class="img-responsive" alt="...">
+                      <img [src]="goods.image" class="img-responsive img-my" alt="...">
                       <div class="carousel-caption">
                         <h3></h3>
                         <p></p>  
@@ -37,7 +37,7 @@
             <p id="description">{{goods.shortDescription}}</p>
             <h2 *ngIf="goods.discount" class="old-price one-line-price">{{ goods.price }} грн </h2>
             <h2 class="one-line-price">{{goods.price - goods.discount}} грн</h2>      
-            <h4 id="description">Средняя оценка: 4.1/5.</h4>
+            <!--<h4 id="description">Средняя оценка: 4.1/5.</h4>
               <div class="btn-group" role="group" aria-label="...">
                 <button type="button" class="btn btn-default">1</button>
                 <button type="button" class="btn btn-default">2</button>
@@ -46,14 +46,14 @@
                 <button type="button" class="btn btn-default">5</button>
                   <div class="btn-group" role="group" aria-label="..."><button type="button" class="btn btn-default">Поставить оценку</button>
                   </div>
-              </div>
+              </div>-->
               <p><br>
                 <a href="#" class="btn btn-primary" role="button">
                   В корзину
                 </a> 
-                <a href="#" class="btn btn-primary" role="button">
+                <!--<a href="#" class="btn btn-primary" role="button">
                   Предзаказ
-                </a>
+                </a>-->
               </p>
             </div>
           </div>
@@ -72,24 +72,19 @@
           <div class="col-md-12"> 
             <div class="panel panel-default">
               <div class="panel-heading">
-                Описание Ноутбук Dell XPS 15 9550 (X5581S0NDW-46S)
+                Описание {{goods.name}}
               </div>
                 <div class="panel-body">
-                  <h4>Ноутбук XPS 15 — это мощный ноутбук в семействе XPS.</h4> 
-                  <p>Он оснащен функциями повышения производительности, которые помогут вам эффективно работать и развлекаться на всю катушку, где бы вы ни были.</p>
-                  
-                  <h4>Фантастическая четкость деталей</h4>
-                  <p>Большой 15.6-дюймовый дисплей ноутбука XPS 15 отличает невероятное разрешение в сочетании с реалистичной цветопередачей. Кристально-четкие детали и насыщенные цвета идеально подходят для редактирования фотографий и графического дизайна. Это яркая модель с широким углом обзора, которая привлекает внимание и позволяет легко работать вместе.</p>
-                  
-                  <h4>Потрясающая прочность</h4>
-                  <p>Конструкцию из механически обработанного алюминия идеально точно вырезают из монолитного куска алюминия, чтобы корпус был прочным и долговечным. Основание из углеволокна является прочным и тонким как алюминий. Поэтому оно часто используется в мощных автомобилях. Кроме того, это легкий и прохладный на ощупь материал.</p>
-                  
-                  <h4>Больше возможностей</h4> 
-                  <p>Процессор Intel Core 6-го поколения отличает мощность и эффективное энергопотребление. Он дает вам возможность эффективней работать и реже подключаться к электросети.</p>
-      
-                  <h4>Великолепный звук</h4>
-                  <p>Музыка, фильмы и игры оживают благодаря ПО MaxxAudio Pro от Waves, основанному на тех же отмеченных наградами технологиях, которыми пользуются продюсеры, инженеры и музыканты с мировым именем.</p>
-      
+                  <p *ngIf="goods.category.id == 3">
+                    {{goods.name + ' отличный выбор для учебы и работы.'}}
+                  </p><br *ngIf="goods.category.id == 3">
+                  <p *ngIf="goods.category.id == 3">Прекрасное сочетание цена / качество лучше всего характеризует этот ноутбук</p>
+                  <p *ngIf="goods.category.id == 5">
+                      {{goods.name + ' отличный выбор для домашнего компьютера.\n'}}
+                  </p><br *ngIf="goods.category.id == 5">
+                  <p *ngIf="goods.category.id == 5">
+                    Если вы ищете на базе какого процессора собрать себе копмьютер для комфорного серфинга интернета и простора фильмов, то этот процессор подойдет идеально для вашего выбора.
+                  </p>
                 </div>
               </div>
           </div>

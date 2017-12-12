@@ -2,7 +2,10 @@
 <div id="goods-cz" >
   <div class="row">
     <div class="col-md-12">
-      <div class="panel panel-default"> <!-- Характеристики -->
+        <div class="spinner-wrapper" *ngIf="!load">
+            <mat-progress-spinner mode="indeterminate" strokeWidth="2"></mat-progress-spinner>
+          </div>
+      <div class="panel panel-default" *ngIf="load"> <!-- Характеристики -->
         <div class="panel-body">
            <table class="table">
              <thead>
