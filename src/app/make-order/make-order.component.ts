@@ -58,7 +58,7 @@ export class MakeOrderComponent implements OnInit {
   }
 
   plus(i) {
-    this.ms[i].value = (+this.ms[i].value + 1) + '';
+      this.ms[i].value = (+this.ms[i].value + 1) + '';
   }
 
   minus(i){
