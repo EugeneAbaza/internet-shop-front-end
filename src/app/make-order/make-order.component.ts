@@ -22,48 +22,48 @@ export class MakeOrderComponent implements OnInit {
     console.log(this.goods);
   }
 
-  sum(): number{
+  sum(): number {
     let res = 0;
-    for(let i=0;i<this.goods.length;i++)
-      res+= (this.goods[i].price * +this.ms[i].value);
+    for(let i = 0; i < this.goods.length; i++)
+      res += (this.goods[i].price * +this.ms[i].value);
     return res;
   }
 
-  countOfEl(){
+  countOfEl() {
     let res = 0;
-    for(let i=0;i<this.goods.length;i++)
-      res+= (1 * +this.ms[i].value);
+    for (let i = 0; i < this.goods.length; i++)
+      res += (1 * +this.ms[i].value);
     return res;
   }
 
-  subm(f){
-    let orderList = [];
-    for(let i=0;i<this.goods.length;i++)
+  subm(f)  {
+    const orderList = [];
+    for (let i = 0; i < this.goods.length; i++)
       orderList[i] = {id: null, order: null, goods: this.goods[i], count: +this.ms[i].value};
 
     this.login.getUser(this.cookie.getCookie('email'))
-      .subscribe(res =>{
-        let order = new Order(null, 
-                      res.json(), 
-                      "Наличными", 
-                      false, 
-                      f.deliveredCity, 
-                      f.postOfficeNumber, 
-                      new Date(), 
-                      this.sum(), 
+      .subscribe(res => {
+        const order = new Order(null,
+                      res.json(),
+                      'Наличными',
+                      false,
+                      f.deliveredCity,
+                      f.postOfficeNumber,
+                      new Date(),
+                      this.sum(),
                       orderList);
         console.log(order);
       });
-    
+
   }
 
-  plus(i){
-    this.ms[i].value = (+this.ms[i].value + 1) + '';
+  plus(i) {
+      this.ms[i].value =  (+this.ms[i].value + 1) + '';
   }
 
-  minus(i){
-    let num = +this.ms[i].value - 1;
-    if(num > 0)
-      this.ms[i].value = num + ''; 
+  minus(i) {
+    const num = +this.ms[i].value - 1;
+    if (num > 0)
+      this.ms[i].value = num + '';
   }
 }
