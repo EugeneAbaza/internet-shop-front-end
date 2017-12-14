@@ -33,7 +33,7 @@ export class MakeOrderComponent implements OnInit {
   sum(): number{
     let res = 0;
     for(let i=0;i<this.goods.length;i++)
-      res+= (this.goods[i].price * +this.ms[i].value);
+      res+= ((this.goods[i].price - this.goods[i].discount) * +this.ms[i].value);
     return res;
   }
 
