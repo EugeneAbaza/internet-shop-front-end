@@ -10,6 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
   private comments: Comments[] = [];
+  private state: boolean = false;
   private id: number;
   private months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
   constructor(private service: CommentsService, private route: ActivatedRoute) { }
@@ -25,19 +26,17 @@ export class CommentsComponent implements OnInit {
       });
   }
 
-  addComment(c){
+  addComment(f){
+    let c = f.value;
     let comment = new Comments(null, this.id, c.comment, c.name, new Date());
     this.service.post(comment)
       .subscribe(res =>{
-        let result = +res.json();
-      
-        if(result == 0){
-          this.service.get(this.id)
-            .subscribe(resp =>{
-                let com = resp.json();
-                this.comments.push(com[com.length-1]);
-            });
-        }
+        this.comments.push(res.json());
+        f.setValue({
+          name: '',
+          comment: ''
+        });
+        this.state = false;
       });
   }
 

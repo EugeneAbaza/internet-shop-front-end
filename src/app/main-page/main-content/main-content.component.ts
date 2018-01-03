@@ -9,13 +9,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MainContentComponent implements OnInit {
   @Input() title: string;
-  items: Goods[] = [];
+  @Input() items: Goods[] = [];
 
-  constructor(private mainServise: MainServiseService) { 
+  constructor(
+    /*private mainServise: MainServiseService*/) { 
   }
 
   ngOnInit() {
-    if(this.title === 'НОВИНКИ'){
+    /*if(this.title === 'НОВИНКИ'){
       this.mainServise.getNewest()
       .subscribe(response =>{
         this.items = response.json();
@@ -30,7 +31,7 @@ export class MainContentComponent implements OnInit {
       .subscribe(response =>{
         this.items = response.json();
       });
-    }
+    }*/
   }
 
 }

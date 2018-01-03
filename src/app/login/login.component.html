@@ -15,7 +15,7 @@
                   matInput 
                   placeholder="Email">
                   <mat-error *ngIf="login.hasError('required')">
-                    Это поле обязательно к заполнению
+                    Не корректное значение
                   </mat-error>
                   <mat-error *ngIf="login.hasError('pattern' || 'minlenght' || 'maxlenght') ">
                       Email не валидного формата
@@ -33,12 +33,13 @@
                     pattern="^.*(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*$" 
                     [type]="hide ? 'password' : 'text'" >
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-                    <mat-error *ngIf="pass.hasError('required')">
-                      Это поле обязательно к заполнению
-                    </mat-error>
                     <mat-error *ngIf="pass.hasError('pattern' || 'minlenght' || 'maxlenght') ">
-                        Email не валидного формата
+                      Email не валидного формата
                     </mat-error>
+                    <mat-error *ngIf="pass.hasError('required')">
+                      Не корректное значение 
+                    </mat-error>
+                    
                 </mat-form-field>
                 <button type="submit" [disabled]="f.invalid" mat-raised-button color="primary">Войти</button>
               </form>

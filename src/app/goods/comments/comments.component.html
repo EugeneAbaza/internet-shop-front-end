@@ -17,13 +17,13 @@
         </div>
         <div class="add">
         
-        <mat-expansion-panel>
+        <mat-expansion-panel [expanded]="state" (opened)="state = true">
           <mat-expansion-panel-header>
             <mat-panel-title>
               Добавить отзыв
             </mat-panel-title>
           </mat-expansion-panel-header>
-            <form ngForm #f="ngForm" (submit)="addComment(f.value)"> 
+            <form ngForm #f="ngForm" (submit)="addComment(f)"> 
               <mat-form-field>
                   <input ngModel 
                     #n="ngModel" 

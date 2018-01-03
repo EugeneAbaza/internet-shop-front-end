@@ -15,6 +15,10 @@ export class MainServiseService {
     this.options = new RequestOptions({headers: this.myHeaders});
   }
 
+  get(){
+    return this.http.get(this.url + '/main');
+  }
+
   getTop(){
     return this.http.get(this.url + '/main/top', this.options);
   }
