@@ -16,7 +16,7 @@ import { MainServiseService } from './servises/main-servise.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -92,7 +92,7 @@ import { DeliveryComponent } from './delivery/delivery.component';
     MatSnackBarModule,
     MatExpansionModule,
     MatIconModule,
-    HttpModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: 'main', component: MainPageComponent},
       {path: 'categories/:id', component: CategoriesComponent},

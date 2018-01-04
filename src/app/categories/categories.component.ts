@@ -9,7 +9,7 @@ import { Filters } from '../model/filters';
 })
 export class CategoriesComponent implements OnInit {
 
-  private categories: any[];
+  private categories: any;
   private id: number;
   private b = false;
   private filters = new Filters('', '');
@@ -18,8 +18,8 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit() {
     this.service.getCategories()
-    .subscribe(respong => {
-        this.categories = respong.json();
+    .subscribe(respond => {
+        this.categories = respond;
     });
   }
 

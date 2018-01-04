@@ -3,6 +3,7 @@ import { OrderService } from './../servises/order.service';
 import { LoginService } from './../servises/login.service';
 import { Order } from './../model/order';
 import { Goods } from './../model/goods';
+import { User } from './../model/user';
 import { GoodsCartService } from './../servises/goods-cart.service';
 import { CookieService } from './../servises/cookie.service';
 import { Component, OnInit } from '@angular/core';
@@ -52,7 +53,7 @@ export class MakeOrderComponent implements OnInit {
     this.login.getUser(this.cookie.getCookie('email'))
       .subscribe(res =>{
         let order = new Order(null, 
-                      res.json(), 
+                      <User> res, 
                       "Наличными", 
                       false, 
                       f.deliveredCity, 
@@ -63,7 +64,7 @@ export class MakeOrderComponent implements OnInit {
        
         this.order.create(order)
           .subscribe(resp => {
-            if(resp.json() == 0){
+            if(resp == 0){
               this.snakBar.open('Заказ оформлен.', '', {duration: 2000});
               this.cookie.setCookie('goods-cart', JSON.stringify([]), 30);
               this.servise.setCount(0);

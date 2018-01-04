@@ -18,10 +18,11 @@ export class MainPageComponent implements OnInit {
   ngOnInit() {
     this.service.get()
       .subscribe(res =>{
-        this.map = res.json();
-        this.top = this.map['top'];
-        this.newest = this.map['newest'];
-        this.discount = this.map['discount'];
+        console.log(res);
+        //this.map = res['results'];
+        this.top = res['top'];
+        this.newest = res['newest'];
+        this.discount = res['discount'];
       });
   }
 

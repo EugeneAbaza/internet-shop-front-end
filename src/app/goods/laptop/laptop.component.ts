@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LaptopComponent implements OnInit {
   private id: number;
-  private laptop: Laptop = new Laptop();
+  private laptop;
   private load = false;
   constructor(private route: ActivatedRoute, private service: LaptopService) { }
 
@@ -21,7 +21,7 @@ export class LaptopComponent implements OnInit {
         console.log(this.id);
         this.service.get(this.id)
           .subscribe(response =>{
-            this.laptop = response.json();
+            this.laptop = response;
             this.load = true;
           });
       });

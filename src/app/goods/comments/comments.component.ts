@@ -9,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit {
-  private comments: Comments[] = [];
+  private comments = [];
   private state: boolean = false;
   private id: number;
   private months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
@@ -21,7 +21,15 @@ export class CommentsComponent implements OnInit {
         this.id = +par.get('id');
         this.service.get(this.id)
           .subscribe(res =>{
-            this.comments = res.json();
+            let i =0;
+            
+            while(true){
+              if(res[i]){
+                this.comments.push(res[i++]);    
+              }else {
+                break;
+              }
+            }
           });
       });
   }
@@ -31,7 +39,7 @@ export class CommentsComponent implements OnInit {
     let comment = new Comments(null, this.id, c.comment, c.name, new Date());
     this.service.post(comment)
       .subscribe(res =>{
-        this.comments.push(res.json());
+        this.comments.push(res);
         f.setValue({
           name: '',
           comment: ''

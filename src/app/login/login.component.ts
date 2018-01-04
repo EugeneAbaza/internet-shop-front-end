@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   logIn(val){
     this.service.auth(val)
       .subscribe(res =>{
-        let result = res.json();
+        let result = res;
         if(result == 0){
           this.cookie.setCookie('email', val.email, 30);
           this.cookie.setCookie('password', val.pass, 30);
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
   reg(val){
     this.service.registration(val)
       .subscribe(resp =>{
-        let result = resp.json();
+        let result = resp;
         if(result == 0){
           this.cookie.setCookie('email', val.email, 30);
           this.cookie.setCookie('password', val.password, 30);

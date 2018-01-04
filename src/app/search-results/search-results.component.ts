@@ -31,7 +31,7 @@ export class SearchResultsComponent implements OnInit {
       this.cookie.setCookie('search', '', -1);
       this.service.get(this.title)
         .subscribe(res =>{
-          this.response = res.json();
+          this.response = res;
           this.goods = this.response.content;
           console.log(this.goods);
         });

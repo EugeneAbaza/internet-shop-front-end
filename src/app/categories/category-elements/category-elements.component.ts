@@ -61,7 +61,7 @@ export class CategoryElementsComponent implements OnInit {
 
       this.service.getElements(this.id, this.page++, this.filters)
         .subscribe(responce =>{
-          this.elements = responce.json();
+          this.elements = responce;
           for(let i=0;i<this.elements.content.length;i++){
             this.content[this.content.length] = this.elements.content[i];
           }

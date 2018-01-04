@@ -1,15 +1,15 @@
-import { Http, Headers, RequestOptions } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class SearchService {
   private url = 'http://localhost:8080/goods/search';
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   get(title){
-    let headers = new Headers({'Content-Type': 'application/json'});
-    let options = new RequestOptions({headers: headers});
-    return this.http.post(this.url, title, options);
+    return this.http.post(this.url, title, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json')
+    });
   }
 }

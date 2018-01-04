@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./goods.component.css']
 })
 export class GoodsComponent implements OnInit {
-  private goods: Goods = new Goods();
+  private goods;
   private load = false;
   private tab: number = 1;
   private id = 0;
@@ -24,7 +24,7 @@ export class GoodsComponent implements OnInit {
          this.id = +param.get('id');
         this.service.get(this.id)
           .subscribe(response =>{
-            this.goods = response.json();
+            this.goods = response;
             this.load = true;
           });
       });

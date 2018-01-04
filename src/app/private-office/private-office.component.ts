@@ -11,9 +11,9 @@ import { User } from './../model/user';
   styleUrls: ['./private-office.component.css']
 })
 export class PrivateOfficeComponent implements OnInit {
-  private user: User = null;
+  private user;
   private tab = true;
-  private orderModel: Order[] = [];
+  private orderModel = [];
 
   constructor(private service: CookieService, private login: LoginService, private order: OrderService) { }
 
@@ -22,13 +22,20 @@ export class PrivateOfficeComponent implements OnInit {
 
     this.login.getUser(email)
       .subscribe(res =>{
-        this.user = res.json();
+        this.user = res;
         this.user.password = null;
 
         if(this.user && this.user.id){
           this.order.get(this.user.id)
             .subscribe(responce =>{
-                this.orderModel = responce.json();
+                let i = 0;
+                while(true){
+                  if(responce[i]){
+                    this.orderModel.push(responce[i++]);
+                  } else {
+                    break;
+                  }
+                }
                 console.log(this.orderModel);
             });
         }
