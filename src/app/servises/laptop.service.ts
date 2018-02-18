@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class LaptopService {
-  private url = 'http://localhost:8080/goods/laptop/'
+  private url = 'https://safe-springs-87091.herokuapp.com/goods/laptop/'
   constructor(private http: HttpClient) { }
 
   get(id: number){

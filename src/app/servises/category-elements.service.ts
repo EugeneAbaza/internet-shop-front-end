@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CategoryElementsService {
 
-  private url = 'http://localhost:8080/goods/category';
+  private url = 'https://safe-springs-87091.herokuapp.com/goods/category';
   constructor(private http: HttpClient) { }
 
   getElements(id: number, page: number, filters: Filters){

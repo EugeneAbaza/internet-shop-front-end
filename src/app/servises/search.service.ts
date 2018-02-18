@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class SearchService {
-  private url = 'http://localhost:8080/goods/search';
+  private url = 'https://safe-springs-87091.herokuapp.com/goods/search';
 
   constructor(private http: HttpClient) { }
 

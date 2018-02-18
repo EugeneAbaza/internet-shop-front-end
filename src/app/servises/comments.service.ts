@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CommentsService {
-  private url = 'http://localhost:8080/comments/';
+  private url = 'https://safe-springs-87091.herokuapp.com/comments/';
 
   constructor(private http: HttpClient) { }
 
