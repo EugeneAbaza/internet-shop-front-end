@@ -3,6 +3,7 @@ import { LoginService } from './../servises/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'login',
@@ -28,8 +29,9 @@ export class LoginComponent implements OnInit {
 
   logIn(val){
     this.service.auth(val)
-      .subscribe(res =>{
-        let result = res;
+      .subscribe(res=>{
+        console.log(res);
+        let result = +res;
         if(result == 0){
           this.cookie.setCookie('email', val.email, 30);
           this.cookie.setCookie('password', val.pass, 30);
@@ -44,7 +46,7 @@ export class LoginComponent implements OnInit {
   reg(val){
     this.service.registration(val)
       .subscribe(resp =>{
-        let result = resp;
+        let result = +resp;
         if(result == 0){
           this.cookie.setCookie('email', val.email, 30);
           this.cookie.setCookie('password', val.password, 30);

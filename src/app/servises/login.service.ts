@@ -14,18 +14,20 @@ export class LoginService {
    }
 
   registration(user){
-    let u = new User(user.email, user.pass, user.firstName, user.lastName, user.patronymic, 0);
+    let u = new User(user.email, user.pass, user.firstName, user.lastName, user.patronymic, 0, 'user');
    // let headers = new Headers({'Content-Type': 'application/json'});
     //let options = new RequestOptions({headers: headers});
     return this.http.post(this.url + 'registration', u, {
-      headers: new HttpHeaders().set('Content-Type', 'application/json')
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      responseType: 'text'
     });
   }
 
   auth(user){
-    let u = new User(user.email, user.pass, null, null, null, 0);
+    let u = new User(user.email, user.pass, null, null, null, 0, null);
     return this.http.post(this.url + 'login', u, {
-      headers: new HttpHeaders().set('Content-Type', 'application/json')
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      responseType: 'text' 
     });
   }
 
