@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class MainServiseService {
 
-  private url = 'http://localhost:8080';
+  private url = 'http://safe-springs-87091.herokuapp.com';
   
   constructor(private http: HttpClient) { 
   }

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CpuService {
-  private url = 'http://localhost:8080/goods/cpu/';
+  private url = 'http://safe-springs-87091.herokuapp.com/goods/cpu/';
 
   constructor(private http: HttpClient) { }
 
