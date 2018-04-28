@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class LoginService {
   private redirectUrl: string;
-  private url = 'http://safe-springs-87091.herokuapp.com/account/';
+  private url = 'http://localhost:8080/account/';
   private isLoggedIn: boolean;
 
   constructor(private http: HttpClient, private cookie: CookieService) {
