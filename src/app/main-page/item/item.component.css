@@ -1,6 +1,9 @@
-
 .btn {
     margin: 2px;
+}
+
+.thumbnail {
+    background: #fff !important;
 }
 
 @media screen and (min-width: 769px) {
@@ -37,3 +40,120 @@
 img {
     height: 200px;
 }
+
+/*
+.content {
+    border: 3px solid #fff;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.item {
+    padding: 1px;
+}
+
+.header {
+    color: #000;
+    text-transform: uppercase;
+    font-size: 20px;
+    background: #fff;
+}
+
+.header:hover{
+    color: blueviolet;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.wrapper {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.btn-center {
+    text-align: center;
+}
+
+.goods-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.price {
+    color: #fff;
+    background: #4B0082;
+    padding: 1px;
+    margin: 1px;
+    font-weight: bold;
+    font-size: 16px;
+    width: fit-content;
+    letter-spacing: 1px; 
+    display: inline-block;
+}
+
+.new-price {
+    color: #fff;
+    background: rgb(95, 73, 110);
+    padding: 1px;
+    margin: 1px;
+    margin-left: 2px !important;
+    font-weight: bold;
+    font-size: 16px;
+    width: fit-content;
+    letter-spacing: 1px; 
+    display: inline-block;
+}
+
+img {
+    margin: 0 auto !important;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.add {
+    text-transform: uppercase;
+    width: 130px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 1px;
+    background: linear-gradient(to right, #C33764, #1D2671);
+    color: #fff;
+    font-size: 12px;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    height: 35px;
+    font-weight: bold;
+}
+
+.more {
+    text-transform: uppercase;
+    width: 130px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 1px;
+    background: linear-gradient(to right, #6441A5, #2a0845);
+    color: #fff;
+    font-size: 12px;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    height: 35px;
+    font-weight: bold;
+}
+
+.add:hover, .more:hover {
+    transform: translateY(-1px);
+    -webkit-transform: translateY(-1px);
+    -moz-transform: translateY(-1px);
+}
+
+.add:active , .add:focus, .more:active , .more:focus {
+    transform: translateY(1px);
+    -webkit-transform: translateY(1px);
+    -moz-transform: translateY(1px);
+}*/

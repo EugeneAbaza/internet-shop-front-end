@@ -37,17 +37,17 @@ export class ItemComponent implements OnInit {
     this.goodsCart.setCount(goods.length);
   }
 
-  updateStatus(): boolean{
+  updateStatus(): string{
     let goods = JSON.parse(this.cookie.getCookie('goods-cart'));
     if(!goods)
-      return false;
+      return 'В корзину';
 
     for(let i=0;i<goods.length;i++){
       if(goods[i].id == this.item.id)
-          return true;
+          return 'Удалить из корзины';
     }
     
-    return false;
+    return 'Удалить из корзины';
   }
 
 }

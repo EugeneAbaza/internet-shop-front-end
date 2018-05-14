@@ -13,17 +13,25 @@ export class GoodsCartComponent implements OnInit {
   constructor(private cookie: CookieService, private goodsCart: GoodsCartService) { }
 
   ngOnInit() {
-    this.goods = JSON.parse(this.cookie.getCookie('goods-cart'));  
+    this.goods = JSON.parse(this.cookie.getCookie('goods-cart')); 
+    if(!this.goods)
+      this.goods = []; 
   }
 
   sum(): number{
     let res = 0;
+    if (!this.goods)
+      this.goods = [];
+
     for(let i=0;i<this.goods.length;i++)
       res+=this.goods[i].price;
     return res;
   }
 
   remove(id){
+    if(!this.goods)
+      return;
+
     for(let i=0;i<this.goods.length;i++){
       if(this.goods[i].id == id){
         this.goods.splice(i, 1);

@@ -46,6 +46,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { GoodsCartComponent } from './goods-cart/goods-cart.component';
 import { FiltersComponent } from './categories/filters/filters.component';
@@ -92,6 +93,7 @@ import { DeliveryComponent } from './delivery/delivery.component';
     MatSnackBarModule,
     MatExpansionModule,
     MatIconModule,
+    MatCardModule,
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'main', component: MainPageComponent},

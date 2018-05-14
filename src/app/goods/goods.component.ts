@@ -58,7 +58,7 @@ export class GoodsComponent implements OnInit {
 
     for(let i=0;i<goods.length;i++){
       if(goods[i].id == this.goods.id)
-          return 'Удалить с корзины';
+          return 'Удалить из корзины';
     }
 
     return 'В корзину';

@@ -10,8 +10,39 @@
           Подробнее
         </a>
         <a class="btn btn-default" role="button" (click)="addToGoodsCart($event)" >
-          {{(updateStatus() ? 'Удалить с корзины' : 'В корзину')}}
+          {{(updateStatus() ? 'Удалить из корзины' : 'В корзину')}}
         </a>
       </p>
   </div>
 </div>
+<!--
+<mat-card>
+  <img mat-card-image class="img-responsive" [src]="item.image" alt="Goods image">
+  <mat-card-content>
+    <p class="goods-name">
+      {{item.name}}
+    </p>
+    <p>
+    {{item.description}}
+    </p>
+    <p class="price" [style.text-decoration]="item.discount ? 'line-through' : 'none'">
+      {{item.price + " ₴"}}
+    </p>
+    <p class="new-price" *ngIf="item.discount">
+      {{item.price - item.discount + " ₴"}} 
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="row">
+      <div class="btn-center">
+        <button class="add">
+          {{updateStatus()}}
+        </button>
+        <button class="more">
+          <a [routerLink]="['/goods', item.id]" >подробнее</a>
+        </button>
+      </div>
+    </div>
+  
+  </mat-card-actions>
+</mat-card>-->

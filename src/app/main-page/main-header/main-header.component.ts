@@ -10,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-header.component.css']
 })
 export class MainHeaderComponent implements OnInit {
+  private isSearching = false;
+  private isMinSizeSearch = false;
 
   constructor(private service: LoginService, private router: Router, private cookie: CookieService, private goodsCart: GoodsCartService) {
    }
@@ -28,4 +30,12 @@ export class MainHeaderComponent implements OnInit {
       this.router.navigate(['']);
   }
 
+  search(){
+    if(window.innerWidth > 767){
+      this.isSearching = !this.isSearching;
+    } else {
+      this.isMinSizeSearch = !this.isMinSizeSearch;
+    }
+  }
+  
 }

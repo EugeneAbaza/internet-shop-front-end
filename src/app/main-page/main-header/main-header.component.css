@@ -1,9 +1,46 @@
 #paragraph:hover {
-    background: white !important;
-    color: black !important;
+    background: linear-gradient(to top left, #5C258D, #4389A2);
+    color: whitesmoke;
 }
 
 .active-my {
-    color: #555 !important;
-    background-color: #e7e7e7 !important;
+    color: whitesmoke !important;
+    /*background-color: #e7e7e7 !important;*/
+    background: linear-gradient(to bottom right, #C33764, #1D2671);
+}
+
+.navbar-brand {
+    color: whitesmoke !important;
+    margin-top: 7px;
+    background: linear-gradient(to bottom right, #C33764, #1D2671);
+   /* background: #f2f2f2 !important;*/
+  }
+
+.navbar-default {
+    background: #fff !important;
+
+}
+
+.navbar-header {
+    background: #fff !important;
+}
+
+#paragraph {
+    color: black;
+}
+
+.search:hover {
+    cursor: pointer;
+}
+
+.nav {
+    margin-top: 7px !important;
+}
+
+.navbar-collapse {
+    background: #fff;
+    text-align: center;
+    /*border-bottom: .5px solid blueviolet;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;*/
 }

@@ -1,7 +1,6 @@
-<div class="col-md-12 displ">
+<div class="displ">
     <mat-form-field>
         <input ngModel #i="ngModel" required name="search" matInput placeholder="Поиск">
     </mat-form-field>
     <button mat-raised-button [disabled]="i.invalid" color="primary" (click)="search(i.value)">Поиск</button>
-
 </div>
