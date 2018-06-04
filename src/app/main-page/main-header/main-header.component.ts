@@ -12,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class MainHeaderComponent implements OnInit {
   private isSearching = false;
   private isMinSizeSearch = false;
+  private screenSize = window.innerWidth;
 
   constructor(private service: LoginService, private router: Router, private cookie: CookieService, private goodsCart: GoodsCartService) {
    }
@@ -22,6 +23,16 @@ export class MainHeaderComponent implements OnInit {
       goods = [];
     
     this.goodsCart.setCount(goods.length);
+
+    window.onresize = event => {
+      if(window.innerWidth > 767 && this.isMinSizeSearch){
+        this.isMinSizeSearch = false;
+        this.isSearching = true;
+      } else if(this.isSearching){
+        this.isMinSizeSearch = true;
+        this.isSearching = false;
+      }
+    }
   }
 
   logOut():void{
