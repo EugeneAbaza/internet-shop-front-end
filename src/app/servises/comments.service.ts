@@ -14,7 +14,7 @@ export class CommentsService {
   post(post){
     //let headers = new Headers({'Content-Type': 'application/json'});
     //let options = new RequestOptions({headers: headers});
-    return this.http.post(this.url + '/add', post, {
+    return this.http.post(this.url + 'add', post, {
       headers: new HttpHeaders().set('Content-Type', 'application/json')
     });
   }

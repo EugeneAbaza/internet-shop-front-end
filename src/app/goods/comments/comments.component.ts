@@ -39,12 +39,15 @@ export class CommentsComponent implements OnInit {
     let comment = new Comments(null, this.id, c.comment, c.name, new Date());
     this.service.post(comment)
       .subscribe(res =>{
-        this.comments.push(res);
-        f.setValue({
-          name: '',
-          comment: ''
-        });
-        this.state = false;
+        if(res!=null){
+          this.comments.push(res); //add new comment to the list of comments
+      
+          f.setValue({ //clear the comment fields
+            name: '',
+            comment: ''
+          });
+          this.state = false; //close the comment field
+        }
       });
   }
 
