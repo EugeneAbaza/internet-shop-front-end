@@ -48,5 +48,8 @@ export class MainHeaderComponent implements OnInit {
       this.isMinSizeSearch = !this.isMinSizeSearch;
     }
   }
-  
+ 
+  admin():boolean {
+    return this.service.isUserLoggedIn() && this.service.isUserAdmin();
+  }
 }

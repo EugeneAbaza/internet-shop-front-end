@@ -9,8 +9,10 @@ export class AuthGuardService implements CanActivate{
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     let url: string = state.url;
-    if (this.service.isUserLoggedIn()) {
+    if (url != '/dashboard' && this.service.isUserLoggedIn()) {
        return true; 
+    } else if(url == '/dashboard' && this.service.isUserLoggedIn() && this.service.isUserAdmin()) {
+      return true;
     }
     this.service.setRedirectUrl(url.substring(1,url.length));
     this.router.navigate([ 'login' ]);

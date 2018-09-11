@@ -4,3 +4,16 @@
     height: 40vh;
     align-items: center;
 }
+
+.property-icon {
+    background-color: transparent;
+    height: 100%;
+    font-size: 26px;
+    line-height: 30px;
+    color: #FF5E68;
+}
+.property-description {
+    background-color: transparent;
+    height: 100%;
+    line-height: 30px;
+}

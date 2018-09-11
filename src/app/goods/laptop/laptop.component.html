@@ -2,89 +2,113 @@
 <div id="goods-cz" >
   <div class="row">
     <div class="col-md-12">
-        <div class="spinner-wrapper" *ngIf="!load">
-            <mat-progress-spinner mode="indeterminate" strokeWidth="2"></mat-progress-spinner>
-          </div>
-      <div class="panel panel-default" *ngIf="load"> <!-- Характеристики -->
-        <div class="panel-body">
-           <table class="table">
-             <thead>
-               <tr>
-                 <th>{{laptop.goods.name}}</th>
-                 <th></th>
-               </tr>
-             </thead>
-             <tbody>
-               <tr>
-                 <td>Процессор</td>
-                 <td>{{laptop.cpuName + ' ' + laptop.cpuModel}}</td>
-                 <td></td>
-               </tr>
-               <tr>
-                  <td>Количество ядер</td>
-                  <td>{{laptop.cpuCountOfCores}}</td>
-                  <td></td>
-                </tr>
-                <tr>
-                    <td>Частота ядер</td>
-                    <td>{{laptop.cpuFrequencyMin + ' - ' + laptop.cpuFrequencyMax + ' ГГрц'}}</td>
-                    <td></td>
-                </tr>
-               <tr>
-                 <td>Диагональ экрана</td>
-                 <td>{{laptop.screen + "' (" + laptop.resolution + ') ' + laptop.screenType}}</td>
-               </tr>
-              <tr>
-                <td>Оперативная память</td>
-                <td>{{laptop.ram}} ГБ</td>
-              </tr>
-              <tr>
-                <td>HDD</td>
-                <td>{{laptop.hdd}} ГБ</td>
-              </tr>
-              <tr>
-                <td>SSD</td>
-                <td>{{laptop.ssd > 0 ? laptop.ssd + ' ГБ' : '-'}}</td>
-              </tr>
-              <tr>
-                <td>Цвет</td>
-                <td>{{laptop.color}}</td>
-              </tr>
-              <tr>
-                <td>Операционная система</td>
-                <td>{{laptop.os}}</td>
-              </tr>
-              <tr>
-                <td>Графика</td>
-                <td>{{(laptop.discreteGraphics ? 'Дискретная ' : 'Встроенная ') + laptop.gpuName + ' ' + laptop.gpuModel + ' (' + laptop.gpuRam + ' ГБ)'}}</td>
-              </tr>
-              <tr>
-                <td>Мультитач</td>
-                <td>{{laptop.multiTouch ? '+' : '-'}}</td>
-              </tr>
-              <tr>
-                <td>WI-Fi</td>
-                <td>{{laptop.wifi ? '+' : '-'}}</td>
-              </tr>
-              <tr>
-                <td>Bluetooth</td>
-                <td>{{laptop.bluetooth}}</td>
-              </tr>
-              <tr>
-                <td>Веб камера</td>
-                <td>{{laptop.webCam ? '+' : '-'}}</td>
-              </tr>
-              <tr>
-                <td>LAN</td>
-                <td>{{laptop.lan ? '+' : '-'}}</td>
-              </tr>
-              <tr>
-                <td>Вес</td>
-                <td>{{laptop.weight + ' кг'}}</td>
-              </tr>
-             </tbody>
-           </table>
-         </div>
+      <div class="spinner-wrapper" *ngIf="!load">
+        <mat-progress-spinner mode="indeterminate" strokeWidth="2"></mat-progress-spinner>
+      </div>
+      <div *ngIf="load">
+        <div class="property-icon col-xs-1"  matTooltip="Процессор" [matTooltipPosition]="position" 
+        matTooltipShowDelay="200">
+          <i class="fas fa-microchip"></i>
+        </div>
+        <div class="property-description col-xs-11">
+          <p>{{laptop.cpuName + ' ' + laptop.cpuModel + ',' + laptop.cpuCountOfCores + ' ядра с частотой ' + laptop.cpuFrequencyMin + ' - ' + laptop.cpuFrequencyMax + ' ГГрц'}}</p>
+        </div>
+    
+        <div class="property-icon col-xs-1"  matTooltip="Оперативная память" [matTooltipPosition]="position" 
+        matTooltipShowDelay="200">
+          <i class="fas fa-memory"></i>
+        </div>
+        <div class="property-description col-xs-11">
+          <p>{{laptop.ram}} ГБ</p>
+        </div>
+
+        <div class="property-icon col-xs-1"  matTooltip="Экран" [matTooltipPosition]="position" 
+        matTooltipShowDelay="200">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="property-description col-xs-11">
+          <p>{{laptop.screen + "' (" + laptop.resolution + ') ' + laptop.screenType}}</p>
+        </div>
+
+        <div class="property-icon col-xs-1"  matTooltip="HDD" [matTooltipPosition]="position" 
+        matTooltipShowDelay="200">
+          <i class="fas fa-hdd"></i>
+        </div>
+        <div class="property-description col-xs-11">
+          <p>{{laptop.hdd}} ГБ</p>
+        </div>
+
+        <div class="property-icon col-xs-1"  matTooltip="SSD" [matTooltipPosition]="position" 
+        matTooltipShowDelay="200">
+          <i class="far fa-hdd"></i>
+        </div>
+        <div class="property-description col-xs-11">
+          <p>{{laptop.ssd > 0 ? laptop.ssd + ' ГБ' : '-'}}</p>
+        </div>
+
+        <div class="property-icon col-xs-1"  matTooltip="Цвет" [matTooltipPosition]="position" 
+        matTooltipShowDelay="200">
+          <i class="fas fa-brush"></i>
+        </div>
+        <div class="property-description col-xs-11">
+          <p>{{laptop.color}}</p>
+        </div>
+
+        <div class="property-icon col-xs-1"  matTooltip="Операционная система" [matTooltipPosition]="position" 
+        matTooltipShowDelay="200">
+          <i class="fab fa-microsoft"></i>
+        </div>
+        <div class="property-description col-xs-11">
+          <p>{{laptop.os}}</p>
+        </div>
+
+        <div class="property-icon col-xs-1"  matTooltip="Графика" [matTooltipPosition]="position" 
+        matTooltipShowDelay="200">
+          <i class="fas fa-microchip"></i>
+        </div>
+        <div class="property-description col-xs-11">
+          <p>{{(laptop.discreteGraphics ? 'Дискретная ' : 'Встроенная ') + laptop.gpuName + ' ' + laptop.gpuModel + ' (' + laptop.gpuRam + ' ГБ)'}}</p>
+        </div>
+        
+        <div class="property-icon col-xs-1"  matTooltip="Мультитач" [matTooltipPosition]="position" 
+        matTooltipShowDelay="200">
+          <i class="fas fa-tablet"></i>
+        </div>
+        <div class="property-description col-xs-11">
+          <p>{{laptop.multiTouch ? '+' : '-'}}</p>
+        </div>
+
+        <div class="property-icon col-xs-1"  matTooltip="WI-FI" [matTooltipPosition]="position" 
+        matTooltipShowDelay="200">
+          <i class="fas fa-wifi"></i>
+        </div>
+        <div class="property-description col-xs-11">
+          <p>{{laptop.wifi ? '+' : '-'}}</p>
+        </div>
+
+        <div class="property-icon col-xs-1"  matTooltip="Bluetooth" [matTooltipPosition]="position" 
+        matTooltipShowDelay="200">
+          <i class="fab fa-bluetooth"></i>
+        </div>
+        <div class="property-description col-xs-11">
+          <p>{{laptop.bluetooth}}</p>
+        </div>
+
+        <div class="property-icon col-xs-1"  matTooltip="Веб камера" [matTooltipPosition]="position" 
+        matTooltipShowDelay="200">
+          <i class="fas fa-camera"></i>
+        </div>
+        <div class="property-description col-xs-11">
+          <p>{{laptop.webCam ? '+' : '-'}}</p>
+        </div>
+
+        <div class="property-icon col-xs-1"  matTooltip="Вес" [matTooltipPosition]="position" 
+        matTooltipShowDelay="200">
+          <i class="fas fa-weight"></i>
+        </div>
+        <div class="property-description col-xs-11">
+          <p>{{laptop.weight + ' кг'}}</p>
+        </div>
       </div>
     </div>
   </div>

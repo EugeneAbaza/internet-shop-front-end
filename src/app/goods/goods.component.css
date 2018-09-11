@@ -1,10 +1,150 @@
-.nav-tabs > li:hover {
+.nav-tabs{
+    background-color: #E1E0E0 !important;
+}
+
+.nav-tabs:hover {
     cursor: pointer;
 }
 
-.spinner-wrapper {
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: black !important;
+}
+
+.active {
+    background-color: white !important;
+}
+
+/* NEW */
+
+.item-info {
+    margin-top: 70px;
+    background-color: #fff;
+    margin-bottom: 50px;
+}
+.left-part {
+    background-color: #fff;
+}
+.rignt-part {
+    background-color: #fff;
+}
+.carousel {
+    height: 500px;
+
+}
+.carousel-item {
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+}
+.name-wrapper {
+    
+}
+.buy-zone {
+    width: 100%;
+    height: 40%;
+    background-color: #fff;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    height: 80vh;
     align-items: center;
+    margin-bottom: 20px;
+}
+.prise {
+    height: 50%;
+    width: 100%;
+}
+.prise h2 {
+    
+}
+.buy-button-wrapper {
+    
+    height: 50%;
+    width: 100%;
+    
+}
+.buy-button {
+    height: 50px;
+    width: 200px;
+    background-color: #FF5E68;
+    border: none;  
+    border-bottom: 5px solid rgb(211, 78, 87);
+    color: #fff;
+    cursor: pointer;
+}
+.buy-button:hover {
+    box-shadow: 0 0 10px #777;
+    border-bottom: none;
+}
+.description-dropdown-button {
+    width: 100%;
+    
+    background-color: #fff !important;
+    color: #777 !important;
+    border: none;
+    border-top: 2px solid #FF5E68;
+    border-radius: 0;
+}
+.description-dropdown {
+    width: 100%;
+    box-shadow: 0 0 10px #777 !important;
+}
+.description-dropdown ul {
+    text-decoration: none;
+    list-style: none;
+    margin-left: 10px;
+}
+.description-dropdown ul li p {
+    margin-left: 10px;
+}
+.item-properties {
+    background-color: #f2f2f2;
+    min-height: 50px;
+    margin-top: 10px;
+}
+.property-icon {
+    background-color: transparent;
+    height: 100%;
+    font-size: 26px;
+    line-height: 50px;
+    color: #FF5E68;
+}
+.property-description {
+    background-color: transparent;
+    height: 100%;
+    line-height: 50px;
+}
+.comment-wrapper {
+    background-color: #f2f2f2;
+    margin-top: 20px;
+}
+.commentators-name {
+    color: #FF5E68;
+    margin-bottom: 10px;
+}
+.comment {
+    margin-left: 50px;
+}
+.own-comment-wrapper {
+    margin-top: 20px;
+    background-color: transparent;
+    min-height: 80px;
+}
+.own-comment-wrapper input {
+    border-radius: 5px;
+    border: 1px solid #FF5E68;
+    height: 60px;
+    margin-top: 10px;
+}
+.own-comment-button {
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #FF5E68;
+    height: 60px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.own-comment-button-wrapper {
+    height: 100%;
 }

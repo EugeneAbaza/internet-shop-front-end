@@ -9,3 +9,153 @@
 .page-header{
     margin-bottom: 10px;
 }
+
+
+
+
+/* NEW */
+
+
+.order-page-wrapper {
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+.order-header-wrapper {
+    margin-bottom: 20px;
+}
+.order-menu {
+    margin-bottom: 50px;
+}
+.location-dropdown-group {
+    margin-bottom: 50px;
+}
+.location-dropdown-group tr {
+    margin-bottom: 10px !important;
+    padding-bottom: 10px;
+}
+.location-input {
+    border: none;
+    border-bottom: 1px solid #FF5E68;
+    background-color: #f2f2f2;
+}
+.card-term {
+    display: flex;
+}
+.card-term input {
+    align-items: center;
+    width: 50px;
+    margin-right: 10px;
+}
+.cvv {
+    width: 50px;
+}
+.card-input {
+    border: none;
+    border-bottom: 1px solid #FF5E68;
+    background-color: #f2f2f2;
+}
+.card-input:hover {
+    box-shadow: 0 0 5px #777;
+}
+.order-items {
+    background-color: #f2f2f2;
+    width: 100%;
+    border-spacing: 0px 5px;
+    border-collapse: separate;
+}
+.order-items tr td{
+    /*border: 1px solid #333;*/
+    min-height: 50px;
+}
+.order-items tr {
+    border: 2px solid #fff;
+}
+.fa-plus:hover, .fa-minus:hover {
+    cursor: pointer;
+}
+.order-x-button {
+    background-color: #FF5E68 !important;
+    border: none;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.nav-tabs {
+    
+}
+.nav-tabs li a {
+    color: #FF5E68;
+}
+.payment-systems-row {
+    background-color: #fff;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.payment-system-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+.payment-system-button:hover {
+    background-color: #fff;
+    box-shadow: 0 0 5px #555;
+    border-bottom: 1px solid #FF5E68;
+    cursor: pointer;
+}
+.payment-system-button img {
+    width: auto;
+    height: 25px;
+}
+.payment-system-icon {
+
+}
+.total-price {
+    width: 100%;
+}
+.main-order-button-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.main-order-button {
+    background-color: #FF5E68;
+    color: #fff;
+    font-size: 20px;
+    height: 70px;
+    width: 250px;
+    border: none;
+    border-bottom: 5px solid #D34E57;
+}
+.main-order-button:hover {
+    border: none;
+    box-shadow: 0 0 10px #555;
+}
+.order-item {
+    background-color: #f2f2f2;
+    min-height: 50px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.order-image {
+    width: auto;
+    height: 45px;
+}
+.order-name-wrapper {
+    width: 250px;
+}
+.post {
+    width: 350px !important;
+}
+
+.mat-radio-button {
+    display: block !important;
+}

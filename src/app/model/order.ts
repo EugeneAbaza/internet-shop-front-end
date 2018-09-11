@@ -7,7 +7,7 @@ export class Order {
         private paymentType: string,
         private paid: boolean,
         private deliveredCity: string,
-        private postOfficeNumber: number,
+        private postDepartment: string,
         private date: Data,
         private summa: number,
         public goodsList:any[]){}

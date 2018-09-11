@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
   logIn(val){
     this.service.auth(val)
       .subscribe(res=>{
-        console.log(res);
         let result = +res;
         if(result == 0){
           this.cookie.setCookie('email', val.email, 30);
@@ -53,7 +52,7 @@ export class LoginComponent implements OnInit {
           this.service.logInUser();
           this.router.navigate([this.service.getRedirectUrl() || '']);  
         } else if(result == 1){
-          this.snakBar.open('Пользователь ст каим email уже зарегистрирован', 'Закрыть', {duration: 2000});
+          this.snakBar.open('Пользователь с таким email уже зарегистрирован', 'Закрыть', {duration: 2000});
         }
       });
   }

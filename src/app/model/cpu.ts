@@ -9,6 +9,10 @@ export class Cpu{
     countOfCores: number;
     vendor: string;
     goods: Goods;
+    generation: String;
+    busFrequency: number;
+    unlockedMultiplier: boolean;
+    TDP: number;
 
     constructor(){
         this.goods = null;

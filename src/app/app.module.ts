@@ -1,3 +1,5 @@
+import { NovaPostaService } from './servises/nova-posta.service';
+import { UserService } from './servises/user.service';
 import { OrderService } from './servises/order.service';
 import { GoodsCartService } from './servises/goods-cart.service';
 import { SearchService } from './servises/search.service';
@@ -38,6 +40,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { CommentsComponent } from './goods/comments/comments.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -53,6 +56,14 @@ import { FiltersComponent } from './categories/filters/filters.component';
 import { MakeOrderComponent } from './make-order/make-order.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { DeliveryComponent } from './delivery/delivery.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardUsersComponent } from './dashboard-users/dashboard-users.component';
+import { DashboardOrdersComponent } from './dashboard-orders/dashboard-orders.component';
+import { DashboardStatComponent } from './dashboard-stat/dashboard-stat.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { MatAutocompleteModule } from '@angular/material';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -79,7 +90,12 @@ import { DeliveryComponent } from './delivery/delivery.component';
     FiltersComponent,
     MakeOrderComponent,
     AboutUsComponent,
-    DeliveryComponent
+    DeliveryComponent,
+    DashboardComponent,
+    DashboardUsersComponent,
+    DashboardOrdersComponent,
+    DashboardStatComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -94,6 +110,10 @@ import { DeliveryComponent } from './delivery/delivery.component';
     MatExpansionModule,
     MatIconModule,
     MatCardModule,
+    MatTableModule,
+    MatAutocompleteModule,
+    MatTooltipModule,
+    MatRadioModule,
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'main', component: MainPageComponent},
@@ -103,10 +123,12 @@ import { DeliveryComponent } from './delivery/delivery.component';
       {path: 'login', component: LoginComponent},
       {path: 'office',canActivate: [AuthGuardService], component: PrivateOfficeComponent},
       {path: 'search', component: SearchResultsComponent},
-      {path: 'goods-cart', component: GoodsCartComponent},
-      {path: 'order', canActivate: [AuthGuardService] ,component: MakeOrderComponent},
+      /*{path: 'goods-cart', component: GoodsCartComponent},*/
+      {path: 'goods-cart', canActivate: [AuthGuardService] ,component: MakeOrderComponent},
       {path: 'about', component: AboutUsComponent},
       {path: 'delivery', component: DeliveryComponent},
+      {path: 'dashboard', component: DashboardComponent},
+      {path: 'forgot', component: ForgotPasswordComponent},
       {path: '**', component: MainPageComponent}
     ])
   ],
@@ -123,7 +145,9 @@ import { DeliveryComponent } from './delivery/delivery.component';
     CommentsService,
     SearchService,
     GoodsCartService,
-    OrderService
+    OrderService,
+    UserService,
+    NovaPostaService
   ],
   bootstrap: [AppComponent]
 })

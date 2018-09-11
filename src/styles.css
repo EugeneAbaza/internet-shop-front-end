@@ -220,14 +220,3 @@ body {
   }
 
   /*переместить в компонент*/
-  .panel{
-    margin-left: -15px !important;
-    margin-right: -15px !important;
-    padding: 0px 5px;
-  }
-
-  .panel-color{
-    color: white;
-    background: #252629 !important;
-    margin-bottom: 0px !important;
-  }

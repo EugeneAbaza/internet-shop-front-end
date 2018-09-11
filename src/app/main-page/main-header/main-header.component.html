@@ -18,6 +18,7 @@
       <li *ngIf="!isSearching"><a id="paragraph" routerLink="/categories" routerLinkActive="active-my">Каталог товаров<span class="sr-only">(current)</span></a></li>
       <li *ngIf="!isSearching"><a id="paragraph" routerLink="/delivery" routerLinkActive="active-my">Оплата и доставка<span class="sr-only">(current)</span></a></li>
       <li *ngIf="!isSearching"><a id="paragraph" routerLink="/about" routerLinkActive="active-my">О нас<span class="sr-only">(current)</span></a></li>
+      <li *ngIf="!isSearching && admin()"><a id="paragraph" routerLink="/dashboard" routerLinkActive="active-my">Админка<span class="sr-only">(current)</span></a></li>
       <li *ngIf="isSearching"><search id="paragraph" class="searching"></search></li>
       <li (click)="search()"><a id="paragraph"><search *ngIf="isMinSizeSearch" class="sr"></search><img [src]="isSearching || isMinSizeSearch ? 'assets/images/close.png' : 'assets/images/search.png'" class="search"><span class="sr-only">(current)</span></a></li>
     </ul>

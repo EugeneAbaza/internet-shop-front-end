@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class CpuComponent implements OnInit {
   private cpu;
   private load = false;
+  private position = 'before';
   constructor(private route: ActivatedRoute, private service: CpuService) { }
 
   ngOnInit() {

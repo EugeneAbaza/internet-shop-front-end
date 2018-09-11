@@ -36,7 +36,6 @@ export class PrivateOfficeComponent implements OnInit {
                     break;
                   }
                 }
-                console.log(this.orderModel);
             });
         }
       });

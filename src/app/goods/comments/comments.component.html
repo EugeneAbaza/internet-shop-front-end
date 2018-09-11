@@ -1,9 +1,6 @@
-<div class="col-lg-3">
-    <div class="panel panel-color">
-        <div class="panel-heading">
-          Отзывы
-        </div></div>
-        <p *ngIf="comments.length == 0">Комментариев нет</p>
+<!--<div class="col-lg-3">-->
+    <div class="panel">
+        <p class="no-comments" *ngIf="comments.length == 0">Комментариев нет</p>
         <div class="panel panel-default" *ngFor="let com of comments">
           <div class="panel-heading">
             {{com.name}}
@@ -59,4 +56,4 @@
             </form>    
         </mat-expansion-panel>
       </div>
-      </div>
+  <!--    </div>-->

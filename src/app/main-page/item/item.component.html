@@ -1,4 +1,4 @@
-<div class="thumbnail" [routerLink]="['/goods',item.category.id, item.id]">
+<!--<div class="thumbnail" [routerLink]="['/goods',item.category.id, item.id]">
   <img [src]="item.image" height="200px" alt="...">
     <div class="caption">
       <h3>{{item.name}}</h3>
@@ -10,9 +10,27 @@
           Подробнее
         </a>
         <a class="btn btn-default" role="button" (click)="addToGoodsCart($event)" >
-          {{(updateStatus() ? 'Удалить из корзины' : 'В корзину')}}
+          {{updateStatus()}}
         </a>
       </p>
+  </div>
+</div>-->
+<div class="item-card" [routerLink]="['/goods',item.category.id, item.id]">
+  <img [src]="item.image" alt="" class="item-image">
+  <div class="item-description">
+      <button class="basket-button" type="submit" (click)="addToGoodsCart($event)">
+        <i class="fas fa-shopping-basket" *ngIf="!isInCart()" matTooltip="В корзину" 
+                                          [matTooltipPosition]="position"
+                                          matTooltipShowDelay="1000"></i>
+        <i class="fas fa-trash-alt" *ngIf="isInCart()" matTooltip="Удалить из корзины" 
+                                          [matTooltipPosition]="position"
+                                          matTooltipShowDelay="1000"></i>
+      </button>
+      <h4>{{item.name}}</h4>
+      <p>{{item.shortDescription}}</p>
+      <div class="price-wrapper">
+          <p>{{item.price - item.discount}} грн</p>
+      </div>
   </div>
 </div>
 <!--

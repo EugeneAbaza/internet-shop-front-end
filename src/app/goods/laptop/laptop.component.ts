@@ -12,6 +12,8 @@ export class LaptopComponent implements OnInit {
   private id: number;
   private laptop;
   private load = false;
+  private position = 'before';
+
   constructor(private route: ActivatedRoute, private service: LaptopService) { }
 
   ngOnInit() {
@@ -21,6 +23,7 @@ export class LaptopComponent implements OnInit {
         console.log(this.id);
         this.service.get(this.id)
           .subscribe(response =>{
+            console.log()
             this.laptop = response;
             this.load = true;
           });

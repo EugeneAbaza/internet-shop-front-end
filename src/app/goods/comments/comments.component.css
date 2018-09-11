@@ -3,6 +3,14 @@
     justify-content: center;
 }
 
+.no-comments{
+    text-align: center;
+}
+
+.panel {
+    background: transparent;
+}
+
 mat-form-field {
     width: 100% !important;
     margin: 10 0 !important;

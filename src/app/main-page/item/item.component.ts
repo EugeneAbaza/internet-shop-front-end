@@ -10,7 +10,8 @@ import { CookieService } from '../../servises/cookie.service';
 })
 export class ItemComponent implements OnInit {
   @Input() private item: Goods;
-
+  private position = 'after';
+  
   constructor(private cookie: CookieService, private goodsCart: GoodsCartService) { }
 
   ngOnInit() {
@@ -37,17 +38,17 @@ export class ItemComponent implements OnInit {
     this.goodsCart.setCount(goods.length);
   }
 
-  updateStatus(): string{
+  isInCart(): boolean{
     let goods = JSON.parse(this.cookie.getCookie('goods-cart'));
     if(!goods)
-      return 'В корзину';
+      return false;
 
     for(let i=0;i<goods.length;i++){
       if(goods[i].id == this.item.id)
-          return 'Удалить из корзины';
+          return true;
     }
     
-    return 'Удалить из корзины';
+    return false;
   }
 
 }
