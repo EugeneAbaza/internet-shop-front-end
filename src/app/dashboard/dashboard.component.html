@@ -1,0 +1,21 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <mat-tab-group (selectedTabChange)="onLinkClick($event)">
+        <mat-tab label="Пользователи">
+          <dashboard-users [users]="users"></dashboard-users>
+        </mat-tab>
+        <mat-tab label="Заказы">
+          <dashboard-orders></dashboard-orders>
+        </mat-tab>
+        <mat-tab label="Статистика">
+          <dashboard-stat></dashboard-stat>      
+        </mat-tab>
+        <mat-tab label="Товары">
+          Товары     
+        </mat-tab>
+      </mat-tab-group>    
+    </div>
+  </div>
+</div> 
+<footer></footer>

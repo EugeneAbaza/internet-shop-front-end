@@ -1,0 +1,22 @@
+<p>count of users {{users.length}} </p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of users; let i = index">
+      <td>{{item.id}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.firstName}}</td>
+      <td>{{item.lastName}}</td>
+      <td (click)="changeRole(item.id)">{{item.role}}</td>
+    </tr>
+  </tbody>
+</table>
